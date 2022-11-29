@@ -1,15 +1,19 @@
-local TEMPLATE = require("widgets/redux/templates")
+local TEMPLATES = require "widgets/redux/templates"
+local Screen = require "widgets/screen"
 
-local function _ctor_(root, owner, data)
-    Screen._ctor(root, "TestPanel")
-    root.owner = owner
-    root.panel = root:AddChild(TEMPLATE.RectangleWindow(0, 0, "Test_UI", data["bottom_buttons"]))
-end
+local TestPanel = Class(Screen, function(self, owner)
+    Screen._ctor(self, "TestPanel")
+    self.owner = owner
 
-local data = {
-    ["bottom_buttons"] = {
-        {text = "Add", cb = function() end, offset = nil},
-        {text = "Close", cb = function() end, offset = nil}
-    }
-}
-local TestPanel = class(Screen, _ctor_(self, owner, data))
+    function self:Destory()
+        if self then
+            TheFrontEnd:PopScreen(self)
+        end
+    end
+
+    self.panel = self:AddChild(TEMPLATES.RectangleWindow(400, 500, "Destination", {
+        {text = "Close", cb = function() self:Destory() end, offset = nil},
+    }))
+end)
+
+return TestPanel
