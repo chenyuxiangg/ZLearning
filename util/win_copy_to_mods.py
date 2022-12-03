@@ -3,7 +3,7 @@ import shutil
 
 git_root_path = "E:\\git\\cyxblog_relate\\"
 git_mods_path = "DST\\mods"
-local_mods_path = "E:\\SteamLibrary\\steamapps\\common\\Don't Starve Together\\mods"
+local_mods_path = "E:\\SteamLibrary\\steamapps\\common\\Don't Starve Together\\mods\\"
 
 def copy_allfile(srcdir, dstdir):
     if (not os.path.isdir(srcdir)) or (not os.path.isdir(dstdir)):
@@ -19,7 +19,7 @@ def copy_allfile(srcdir, dstdir):
             shutil.copy(object_path, dstdir)
         elif os.path.isdir(object_path):
             dirobj_cnt += 1
-            shutil.copytree(object_path, dstdir)
+            shutil.copytree(object_path, dstdir+object)
     print("from:\n\t{}\nto:\n\t{}".format(srcdir, dstdir))
     print("copy file nums: {}, copy dir nums: {}".format(fileobj_cnt, dirobj_cnt))
     return True
