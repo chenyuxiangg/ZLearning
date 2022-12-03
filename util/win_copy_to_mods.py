@@ -1,7 +1,7 @@
 import os
 import shutil
 
-git_root_path = "cyxblog_relate"
+git_root_path = "e\\git\\cyxblog_relate"
 git_mods_path = "DST\\mods"
 local_mods_path = "E:\\SteamLibrary\\steamapps\\common\\Don't Starve Together\\mods"
 
