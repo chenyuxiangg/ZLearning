@@ -19,6 +19,8 @@ def copy_allfile(srcdir, dstdir):
             shutil.copy(object_path, dstdir)
         elif os.path.isdir(object_path):
             dirobj_cnt += 1
+            if os.path.exists(dstdir+object):
+                shutil.rmtree(dstdir+object)
             shutil.copytree(object_path, dstdir+object)
     print("from:\n\t{}\nto:\n\t{}".format(srcdir, dstdir))
     print("copy file nums: {}, copy dir nums: {}".format(fileobj_cnt, dirobj_cnt))
