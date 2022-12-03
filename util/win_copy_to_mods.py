@@ -10,14 +10,18 @@ def copy_allfile(srcdir, dstdir):
         print("please check two paths if exist or not:\n\t{}\n\t{}.".format(srcdir, dstdir))
         return False
     srcfiles = os.listdir(srcdir)
-    objcnt = 0
+    fileobj_cnt = 0
+    dirobj_cnt = 0
     for object in srcfiles:
         object_path = os.path.join(srcdir, object)
-        if os.path.exists(object_path):
-            objcnt += 1
+        if os.path.isfile(object_path):
+            fileobj_cnt += 1
             shutil.copy(object_path, dstdir)
+        elif os.path.isdir(object_path):
+            dirobj_cnt += 1
+            shutil.copytree(object_path, dstdir)
     print("from:\n\t{}\nto:\n\t{}".format(srcdir, dstdir))
-    print("copy files num: {}.".format(objcnt))
+    print("copy file nums: {}, copy dir nums: {}".format(fileobj_cnt, dirobj_cnt))
     return True
 
 copy_allfile(git_root_path+git_mods_path, local_mods_path)
