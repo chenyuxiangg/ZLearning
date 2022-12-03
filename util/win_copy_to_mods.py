@@ -18,5 +18,6 @@ def copy_allfile(srcdir, dstdir):
             shutil.copy(object_path, dstdir)
     print("from:\n\t{}\nto:\n\t{}".format(srcdir, dstdir))
     print("copy files num: {}.".format(objcnt))
+    return True
 
 copy_allfile(git_root_path+git_mods_path, local_mods_path)
