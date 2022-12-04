@@ -60,8 +60,8 @@ function ZScreenUnit:OnRawKey(key, down)
         if key == KEY_K then
             local curscrenn = TheFrontEnd:GetActiveScreen()
             if self.inst == curscrenn.inst then
-                ZDEBUG:zprint("current active screen is ZScreen.")
-                -- self:Close()
+                -- ZDEBUG:zprint("current active screen is ZScreen.")
+                self:Close()
             end
         end
         return true
