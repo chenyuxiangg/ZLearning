@@ -1,6 +1,6 @@
 local TEMPLATES = require("widgets/redux/templates")
 
-local screenroot_ctor = function fn(self)
+local screenroot_ctor = function (self)
     function self:ShowScreen()
         self.screenroot = TEMPLATES.ScreenRoot()
 

@@ -1,6 +1,6 @@
 local TEMPLATES = require("widgets/redux/templates")
 
-local rectanglewindow = function fn(self)
+local rectanglewindow = function (self)
     function self:ShowRectangleWindow()
         self.rectwindow = TEMPLATES.RectangleWindow(0, 0, "z_rect_templates", nil, nil, "from zyzs.")
         TheFrontEnd:PushScreen(self.rectwindow)
