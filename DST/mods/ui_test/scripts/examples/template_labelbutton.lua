@@ -5,11 +5,11 @@ local TEMPLATES = require("widgets/redux/templates")
 require("fonts")
 
 local labelbutton = function(self)
-    local labelbtn = TEMPLATES.LabelButton(function()end, "label", "btn", 10, 5, 5, 2, UIFONT, 10, nil)
+    local labelbtn = TEMPLATES.LabelButton(function()end, "label", "btn", 100, 50, 50, 20, UIFONT, 10, nil)
     local objdata = {
         ["obj"] = labelbtn,
-        ["posx"] = 300,
-        ["posy"] = 300
+        ["posx"] = nil,
+        ["posy"] = nil
     }
     self.labelbtn = self:AddChild(ZS(self, objdata))
     self.labelbtn:SetPosition(300, 300)
