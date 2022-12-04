@@ -54,12 +54,15 @@ function ZScreenUnit:OnDestroy()
 end
 
 function ZScreenUnit:OnRawKey(key, down)
-    ZDEBUG:zprint(TheFrontEnd:GetActiveScreen())
     if ZScreenUnit._base.OnRawKey(self, key, down) then
-        ZDEBUG:zprint("_base " .. STRINGS.UI.CONTROLSSCREEN.INPUTS[1][key] .. "is down.")
         return true
     else
-        ZDEBUG:zprint(STRINGS.UI.CONTROLSSCREEN.INPUTS[1][key] .. "is down.")
+        if key == KEY_K then
+            curscrenn = TheFrontEnd:GetActiveScreen()
+            if self.inst == curscrenn.inst then
+                ZDEBUG:zprint("current active screen is ZScreen.")
+            end
+        end
         return true
     end
 end
