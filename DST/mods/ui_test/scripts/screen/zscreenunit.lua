@@ -9,6 +9,31 @@ local ZScreenUnit = Class(SCREEN, function(self, parent, objdata)
     self.parent = parent
 
     self.panel = self:AddChild(objdata["obj"])
+
+    function self.panel:OnBecomeActive()
+        TheSim:SetUIRoot(self.inst.entity)
+        if self.last_focus and self.last_focus.inst.entity:IsValid() then
+            self.last_focus:SetFocus()
+        else
+            self.last_focus = nil
+            if self.default_focus then
+                self.default_focus:SetFocus()
+            end
+        end
+    end
+
+    function self.panel:OnBecomeInactive()
+        self.last_focus = self:GetDeepestFocus()
+    end
+
+    function self.panel:OnUpdate(dt)
+        return true
+    end
+        
+    function self.panel:OnDestroy()
+        self:Kill()
+    end
+
     self.panel:SetPosition(objdata["posx"] or 100, objdata["posy"] or 100)
 end)
 
