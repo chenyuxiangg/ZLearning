@@ -15,7 +15,7 @@ local rectanglewindow = function(self)
     end
 
     self.openbtn = self:AddChild(TEMPLATES.StandardButton(function() self:ShowRectangleWindow() end, "open", {100, 100}, nil))
-    self.closebtn = self:Addchild(TEMPLATES.StandardButton(function() self:CloseRectangelWindow() end, "close", {100, 150}, nil))
+    self.closebtn = self:AddChild(TEMPLATES.StandardButton(function() self:CloseRectangelWindow() end, "close", {100, 150}, nil))
 end
 
 return rectanglewindow
