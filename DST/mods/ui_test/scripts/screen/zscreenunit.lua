@@ -1,6 +1,6 @@
 local WIDGET = require("widgets/widget")
-local STRINGS = require("strings")
 local ZDEBUG = require("debug/debug")
+require("strings")
 
 local z_widget_index = 0
 
