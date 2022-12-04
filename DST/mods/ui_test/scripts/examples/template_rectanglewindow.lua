@@ -2,7 +2,10 @@ local TEMPLATES = require("widgets/redux/templates")
 
 local rectanglewindow = function(self)
     function self:ShowRectangleWindow()
-        self.rectwindow = TEMPLATES.RectangleWindow(0, 0, "z_rect_templates", nil, nil, "from zyzs.")
+        local btngroups = {
+            {"close", function() self:CloseRectangelWindow() end, nil}
+        }
+        self.rectwindow = TEMPLATES.RectangleWindow(0, 0, "z_rect_templates", btngroups, nil, "from zyzs.")
 
         function self.rectwindow:OnBecomeActive()
             TheSim:SetUIRoot(self.inst.entity)
@@ -41,9 +44,7 @@ local rectanglewindow = function(self)
     end
 
     self.openbtn = self:AddChild(TEMPLATES.StandardButton(function() self:ShowRectangleWindow() end, "open", {100, 50}, nil))
-    self.closebtn = self:AddChild(TEMPLATES.StandardButton(function() self:CloseRectangelWindow() end, "close", {100, 50}, nil))
     self.openbtn:SetPosition(100, 100)
-    self.closebtn:SetPosition(100,150)
 end
 
 return rectanglewindow
