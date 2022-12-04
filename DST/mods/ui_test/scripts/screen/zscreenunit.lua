@@ -54,10 +54,10 @@ end
 
 function ZScreenUnit:OnRawKey(key, down)
     if ZScreenUnit._base.OnRawKey(self, key, down) then
-        print("_base " .. STRINGS.UI.CONTROLSSCREEN.INPUT[1][key] .. "is down.")
+        print("_base " .. STRINGS.UI.CONTROLSSCREEN.INPUTS[1][key] .. "is down.")
         return true
     else
-        print(INPUT[1][key] .. "is down.")
+        print(STRINGS.UI.CONTROLSSCREEN.INPUTS[1][key] .. "is down.")
         return true
     end
 end
