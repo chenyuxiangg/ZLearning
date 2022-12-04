@@ -13,15 +13,16 @@ local ZScreenUnit = Class(SCREEN, function(self, parent, objdata)
 end)
 
 function ZScreenUnit:Show()
-    if self.panel then
-        TheFrontEnd:PushScreen(self)
+    if self and self.panel then
+        TheFrontEnd:PushScreen(self.panel)
     end
 end
 
 function ZScreenUnit:Close()
-    TheFrontEnd:PopScreen(self)
+    TheFrontEnd:PopScreen(self.panel)
     if self.panel then
         self.panel = nil
+        self = nil
     end
 end
 
