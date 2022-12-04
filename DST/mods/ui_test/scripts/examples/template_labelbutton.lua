@@ -23,6 +23,7 @@ local labelbutton = function(self)
             self.labelbtn:Close()
         end
         self.labelbtn = nil
+    end
 
     self.openbtn = self:AddChild(TEMPLATES.StandardButton(function() self:ShowZS() end, "open", {100, 50}, nil))
     self.openbtn:SetPosition(100, 100)
