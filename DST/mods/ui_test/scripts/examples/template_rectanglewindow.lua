@@ -5,7 +5,7 @@ local rectanglewindow = function(self)
         local btngroups = {
             {text = "close", cb = function() self:CloseRectangelWindow() end, offset = nil}
         }
-        self.rectwindow = self:AddChild(TEMPLATES.RectangleWindow(0, 0, "z_rect_templates", btngroups, nil, "from zyzs."))
+        self.rectwindow = self:AddChild(TEMPLATES.RectangleWindow(400, 500, "z_rect_templates", btngroups, nil, "from zyzs."))
 
         function self.rectwindow:OnBecomeActive()
             TheSim:SetUIRoot(self.inst.entity)
