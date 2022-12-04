@@ -1,4 +1,6 @@
 local WIDGET = require("widgets/widget")
+require("strings")
+
 local z_widget_index = 0
 
 -- description: 通过组合原生代码提供的功能，创建自己的可UI组件
@@ -48,6 +50,15 @@ end
     
 function ZScreenUnit:OnDestroy()
     self:Kill()
+end
+
+function ZScreenUnit:OnRawKey(key, down)
+    if ZScreenUnit._base.OnRawKey(self, key, down) then
+        return true
+    else
+        print(INPUT[key] .. "is down.")
+        return true
+    end
 end
 
 return ZScreenUnit
