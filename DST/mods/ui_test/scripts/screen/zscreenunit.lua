@@ -25,7 +25,6 @@ function ZScreenUnit:Close()
     TheFrontEnd:PopScreen(self)
     if self.panel then
         self.panel = nil
-        self = nil
     end
 end
 
@@ -62,6 +61,8 @@ function ZScreenUnit:OnRawKey(key, down)
             if self.inst == curscrenn.inst then
                 -- ZDEBUG:zprint("current active screen is ZScreen.")
                 self:Close()
+                self.parent.zs = nil
+                self = nil
             end
         end
         return true

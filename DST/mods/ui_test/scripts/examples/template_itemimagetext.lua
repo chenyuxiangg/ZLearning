@@ -16,16 +16,16 @@ local itemimagetext = function(self)
             ["posx"] = nil,
             ["posy"] = nil,
         }
-        self.iit = self.iit or self:AddChild(SZ(self, objdata))
-        self.iit:SetPosition(300, 300)
-        self.iit:Show()
-        return self.iit
+        self.zs = self.zs or self:AddChild(SZ(self, objdata))
+        self.zs:SetPosition(300, 300)
+        self.zs:Show()
+        return self.zs
     end
 
     function self:CloseSZ()
-        if self.iit then
-            self.iit:Close()
-            self.iit = nil
+        if self.zs then
+            self.zs:Close()
+            self.zs = nil
         end
     end
 
