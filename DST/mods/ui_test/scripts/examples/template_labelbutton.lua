@@ -6,7 +6,12 @@ require("fonts")
 
 local labelbutton = function(self)
     local labelbtn = TEMPLATES.LabelButton(function()end, "label", "btn", 10, 5, 5, 2, UIFONT, 10, nil)
-    self.labelbtn = self:AddChild(ZS(self, labelbtn))
+    local objdata = {
+        ["obj"] = labelbtn,
+        ["posx"] = 300,
+        ["posy"] = 300
+    }
+    self.labelbtn = self:AddChild(ZS(self, objdata))
     self.labelbtn:SetPosition(300, 300)
 
     self.openbtn = self:AddChild(TEMPLATES.StandardButton(function() self.labelbtn:Show() end, "open", {100, 50}, nil))
