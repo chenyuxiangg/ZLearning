@@ -5,16 +5,26 @@ local TEMPLATES = require("widgets/redux/templates")
 require("fonts")
 
 local labelbutton = function(self)
-    local labelbtn = TEMPLATES.LabelButton(function()end, "label", "btn", 100, 50, 50, 20, UIFONT, 10, nil)
-    local objdata = {
-        ["obj"] = labelbtn,
-        ["posx"] = nil,
-        ["posy"] = nil
-    }
-    self.labelbtn = self:AddChild(ZS(self, objdata))
-    self.labelbtn:SetPosition(300, 300)
+    function self:ShowZS()
+        local labelbtn = TEMPLATES.LabelButton(function() self:CloseSZ() end, "label", "btn", 100, 50, 50, 20, UIFONT, 25, nil)
+        local objdata = {
+            ["obj"] = labelbtn,
+            ["posx"] = nil,
+            ["posy"] = nil
+        }
+        self.labelbtn = self.labelbtn or self:AddChild(ZS(self, objdata))
+        self.labelbtn:SetPosition(300, 300)
+        self.labelbtn:Show()
+        return self.labelbtn
+    end
 
-    self.openbtn = self:AddChild(TEMPLATES.StandardButton(function() self.labelbtn:Show() end, "open", {100, 50}, nil))
+    function self:CloseSZ()
+        if self.labelbtn then
+            self.labelbtn:Close()
+        end
+        self.labelbtn = nil
+
+    self.openbtn = self:AddChild(TEMPLATES.StandardButton(function() self:ShowZS() end, "open", {100, 50}, nil))
     self.openbtn:SetPosition(100, 100)
 end
 
