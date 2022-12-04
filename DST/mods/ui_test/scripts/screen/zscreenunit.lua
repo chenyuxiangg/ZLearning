@@ -5,7 +5,7 @@ local z_widget_index = 0
 -- args: 
 --      obj: 可以是任意由Widget派生的UI组件
 local ZScreenUnit = Class(SCREEN, function(self, parent, obj)
-    Screen._ctor(self, "Zscreen_" .. tostring(z_widget_index))
+    SCREEN._ctor(self, "Zscreen_" .. tostring(z_widget_index))
     self.parent = parent
 
     self.panel = self:AddChild(obj)
