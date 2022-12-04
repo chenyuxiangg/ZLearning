@@ -10,9 +10,10 @@ local z_widget_index = 0
 local ZScreenUnit = Class(WIDGET, function(self, parent, objdata)
     WIDGET._ctor(self, "Zscreen_" .. tostring(z_widget_index))
     self.parent = parent
+    self.panelposx = objdata["posx"] or 0
+    self.panelposy = objdata["posy"] or 0
 
     self.panel = self:AddChild(objdata["obj"])
-    self.panel:SetPosition(objdata["posx"] or 0, objdata["posy"] or 0)
 end)
 
 function ZScreenUnit:Show()
