@@ -11,7 +11,7 @@ local itemimagetext = function(self)
         local ITEM_SCALE = 0.6
 
         local iit = TEMPLATES.ItemImageText("body", "body_default1", ITEM_SCALE, FONT, FONT_SIZE, "", GREY, TEXT_WIDTH, TEXT_OFFSET)
-        objdata = {
+        local objdata = {
             ["obj"] = iit,
             ["posx"] = nil,
             ["posy"] = nil,
