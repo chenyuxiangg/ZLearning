@@ -1,5 +1,6 @@
 local WIDGET = require("widgets/widget")
 local STRINGS = require("strings")
+local ZDEBUG = require("debug/debug")
 
 local z_widget_index = 0
 
@@ -53,11 +54,12 @@ function ZScreenUnit:OnDestroy()
 end
 
 function ZScreenUnit:OnRawKey(key, down)
+    ZDEBUG["zprint"](TheFrontEnd:GetActiveScreen())
     if ZScreenUnit._base.OnRawKey(self, key, down) then
-        print("_base " .. STRINGS.UI.CONTROLSSCREEN.INPUTS[1][key] .. "is down.")
+        ZDEBUG["zprint"]("_base " .. STRINGS.UI.CONTROLSSCREEN.INPUTS[1][key] .. "is down.")
         return true
     else
-        print(STRINGS.UI.CONTROLSSCREEN.INPUTS[1][key] .. "is down.")
+        ZDEBUG["zprint"](STRINGS.UI.CONTROLSSCREEN.INPUTS[1][key] .. "is down.")
         return true
     end
 end
