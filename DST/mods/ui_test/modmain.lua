@@ -1,3 +1,3 @@
-local fn = require "examples/template_labelbutton"
+local fn = require "examples/template_itemimagetext"
 
 AddClassPostConstruct("screens/playerhud", fn)
