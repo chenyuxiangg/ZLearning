@@ -3,6 +3,31 @@ local TEMPLATES = require("widgets/redux/templates")
 local rectanglewindow = function(self)
     function self:ShowRectangleWindow()
         self.rectwindow = TEMPLATES.RectangleWindow(0, 0, "z_rect_templates", nil, nil, "from zyzs.")
+
+        function self.rectwindow:OnBecomeActive()
+            TheSim:SetUIRoot(self.inst.entity)
+            if self.last_focus and self.last_focus.inst.entity:IsValid() then
+                self.last_focus:SetFocus()
+            else
+                self.last_focus = nil
+                if self.default_focus then
+                    self.default_focus:SetFocus()
+                end
+            end
+        end
+
+        function self.rectwindow:OnBecomeInactive()
+            self.last_focus = self:GetDeepestFocus()
+        end
+
+        function self.rectwindow:OnUpdate(dt)
+            return true
+        end
+            
+        function self.rectwindow:OnDestroy()
+            self:Kill()
+        end
+
         self.rectwindow:SetPosition(300, 300)
         TheFrontEnd:PushScreen(self.rectwindow)
         return self.rectwindow
