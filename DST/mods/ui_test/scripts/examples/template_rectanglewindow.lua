@@ -3,9 +3,9 @@ local TEMPLATES = require("widgets/redux/templates")
 local rectanglewindow = function(self)
     function self:ShowRectangleWindow()
         local btngroups = {
-            {"close", function() self:CloseRectangelWindow() end, nil}
+            {text = "close", cb = function() self:CloseRectangelWindow() end, offset = nil}
         }
-        self.rectwindow = TEMPLATES.RectangleWindow(0, 0, "z_rect_templates", btngroups, nil, "from zyzs.")
+        self.rectwindow = self:AddChild(TEMPLATES.RectangleWindow(0, 0, "z_rect_templates", btngroups, nil, "from zyzs."))
 
         function self.rectwindow:OnBecomeActive()
             TheSim:SetUIRoot(self.inst.entity)
