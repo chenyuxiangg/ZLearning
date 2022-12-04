@@ -54,12 +54,12 @@ function ZScreenUnit:OnDestroy()
 end
 
 function ZScreenUnit:OnRawKey(key, down)
-    ZDEBUG["zprint"](TheFrontEnd:GetActiveScreen())
+    ZDEBUG:zprint(TheFrontEnd:GetActiveScreen())
     if ZScreenUnit._base.OnRawKey(self, key, down) then
-        ZDEBUG["zprint"]("_base " .. STRINGS.UI.CONTROLSSCREEN.INPUTS[1][key] .. "is down.")
+        ZDEBUG:zprint("_base " .. STRINGS.UI.CONTROLSSCREEN.INPUTS[1][key] .. "is down.")
         return true
     else
-        ZDEBUG["zprint"](STRINGS.UI.CONTROLSSCREEN.INPUTS[1][key] .. "is down.")
+        ZDEBUG:zprint(STRINGS.UI.CONTROLSSCREEN.INPUTS[1][key] .. "is down.")
         return true
     end
 end
