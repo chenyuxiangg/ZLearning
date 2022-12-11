@@ -1,3 +1,5 @@
-# Article Tree
+# Image Tree
 
 ## 说明
+
+该分支用于存储博客文件中的图片
