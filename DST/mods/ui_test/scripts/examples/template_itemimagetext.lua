@@ -10,28 +10,15 @@ local itemimagetext = function(self)
         local FONT_SIZE = 32
         local ITEM_SCALE = 0.6
 
-        if self.zs then
-            self.zs:SetPosition(300, 300)
-            self.zs.panel:SetPosition(self.zs.panelposx, self.zs.panelposy)
-        else
-            local iit = TEMPLATES.ItemImageText("body", "body_default1", ITEM_SCALE, FONT, FONT_SIZE, "test", GREY, TEXT_WIDTH, TEXT_OFFSET)
-            local objdata = {
-                ["obj"] = iit,
-                ["posx"] = nil,
-                ["posy"] = nil,
-            }
-            self.zs = self.zs or self:AddChild(SZ(self, objdata))
-            self.zs:SetPosition(300, 300)
-        end
-        self.zs:Show()
-        return self.zs
-    end
-
-    function self:CloseSZ()
-        if self.zs then
-            self.zs:Close()
-            self.zs = nil
-        end
+        local iit = TEMPLATES.ItemImageText("body", "body_default1", ITEM_SCALE, FONT, FONT_SIZE, "test", GREY, TEXT_WIDTH, TEXT_OFFSET)
+        local objdata = {
+            ["obj"] = iit,
+            ["posx"] = nil,
+            ["posy"] = nil,
+        }
+        local zs = SZ(self, objdata)
+        zs:Show()
+        return zs
     end
 
     self.openbtn = self:AddChild(TEMPLATES.StandardButton(function() self:ShowSZ() end, "open", {100, 50}, nil))
