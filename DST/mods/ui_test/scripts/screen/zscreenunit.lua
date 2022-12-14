@@ -1,5 +1,6 @@
 local WIDGET = require("widgets/widget")
 local ZDEBUG = require("debug/debug")
+local TEMPLATES = require("widgets/redux/templates")
 require("strings")
 
 local z_widget_index = 0
@@ -14,6 +15,15 @@ local ZScreenUnit = Class(WIDGET, function(self, parent, objdata)
     self.panelposy = objdata["posy"] or 0
 
     self.panel = self:AddChild(objdata["obj"])
+
+    self.topright_root = self:AddChild(Widget("z_side"))
+    self.topright_root:SetScaleMode(SCALEMODE_PROPORTIONAL)
+    self.topright_root:SetHAnchor(ANCHOR_RIGHT)
+    self.topright_root:SetVAnchor(ANCHOR_TOP)
+    self.topright_root:SetMaxPropUpscale(MAX_HUD_SCALE)
+    self.topright_root = self.opright_root:AddChild(Widget("tr_z_side"))
+
+    self.topright_root:AddChild(TEMPLATES.LoaderBackground("loading_pigking"))
 end)
 
 function ZScreenUnit:Show()
