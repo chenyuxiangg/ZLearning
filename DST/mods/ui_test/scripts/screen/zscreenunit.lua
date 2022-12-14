@@ -32,8 +32,6 @@ end
 
 function ZScreenUnit:Close()
     TheFrontEnd:PopScreen(self)
-    self.topright_root = nil
-    self.panel = nil
 end
 
 function ZScreenUnit:OnBecomeActive()
