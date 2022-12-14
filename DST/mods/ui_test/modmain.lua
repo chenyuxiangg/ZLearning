@@ -20,5 +20,5 @@ local function Simfn()
     _g.TheInput:AddKeyHandler(KillZscreenByKeyK)
 end
 
-AddSimPostInit(sim_fn)
+AddSimPostInit(Simfn)
 AddClassPostConstruct("screens/playerhud", fn)
