@@ -14,8 +14,6 @@ local ZScreenUnit = Class(WIDGET, function(self, parent, objdata)
     self.panelposx = objdata["posx"] or 0
     self.panelposy = objdata["posy"] or 0
 
-    self.panel = self:AddChild(objdata["obj"])
-
     self.topright_root = self:AddChild(WIDGET("z_side"))
     self.topright_root:SetScaleMode(SCALEMODE_PROPORTIONAL)
     self.topright_root:SetHAnchor(ANCHOR_RIGHT)
@@ -23,7 +21,7 @@ local ZScreenUnit = Class(WIDGET, function(self, parent, objdata)
     self.topright_root:SetMaxPropUpscale(MAX_HUD_SCALE)
     self.topright_root = self.topright_root:AddChild(WIDGET("tr_z_side"))
 
-    self.topright_root:AddChild(TEMPLATES.LoaderBackground("loading_pigking"))
+    self.panel = self.topright_root:AddChild(objdata["obj"])
 end)
 
 function ZScreenUnit:Show()
