@@ -60,19 +60,4 @@ function ZScreenUnit:OnDestroy()
     self:Kill()
 end
 
-function ZScreenUnit:OnRawKey(key, down)
-    if ZScreenUnit._base.OnRawKey(self, key, down) then
-        return true
-    else
-        if key == KEY_K then
-            local curscrenn = TheFrontEnd:GetActiveScreen()
-            if self.inst == curscrenn.inst then
-                -- ZDEBUG:zprint(self.parent)
-                self:Close()
-            end
-        end
-        return true
-    end
-end
-
 return ZScreenUnit
