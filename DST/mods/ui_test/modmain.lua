@@ -10,6 +10,7 @@ local function KillZscreenByKeyK(key, down)
         local curscrenn = TheFrontEnd:GetActiveScreen()
         ZDEBUG:zprint("==cyx_test==")
         ZDEBUG:zprint(curscrenn)
+        ZDEBUG:zprint(curscrenn.parent)
     end
 end
 
