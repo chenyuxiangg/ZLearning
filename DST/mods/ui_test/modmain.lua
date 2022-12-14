@@ -9,7 +9,7 @@ local function KillZscreenByKeyK(key, down)
     if _g.TheInput:IsKeyDown(_g.KEY_K) then
         local curscrenn = TheFrontEnd:GetActiveScreen()
         if string.match(curscrenn.name, "Zscreen_%d+") == curscrenn.name then
-            local screenroot = _g.TheFrontEnd:GetOpenScreenOfType("screenroot")
+            local screenroot = _g.TheFrontEnd:GetOpenScreenOfType(curscrenn.parent.name)
             ZDEBUG:zprint(screenroot)
         end
     end
