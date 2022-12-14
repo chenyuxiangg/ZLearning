@@ -8,11 +8,8 @@ local function KillZscreenByKeyK(key, down)
     end
     if _g.TheInput:IsKeyDown(_g.KEY_K) then
         local curscrenn = TheFrontEnd:GetActiveScreen()
-        if type(curscrenn) == "ZScreenUnit" then
-            ZDEBUG:zprint(self.parent)
-        else
-            ZDEBUG:zprint(type(curscrenn))
-        end
+        ZDEBUG:zprint("==cyx_test==")
+        ZDEBUG:zprint(curscrenn)
     end
 end
 
