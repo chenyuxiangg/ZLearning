@@ -21,7 +21,7 @@ local ZScreenUnit = Class(WIDGET, function(self, parent, objdata)
     self.black.image:SetVAnchor(ANCHOR_MIDDLE)
     self.black.image:SetHAnchor(ANCHOR_MIDDLE)
     self.black.image:SetScaleMode(SCALEMODE_FILLSCREEN)
-    self.black.image:SetTint(0,0,0,0) -- invisible, but clickable!
+    self.black.image:SetTint(1,1,1,1) -- invisible, but clickable!
     self.black:SetOnClick(function() self:Close() end)
 
     self.topright_root = self:AddChild(WIDGET("z_side"))
