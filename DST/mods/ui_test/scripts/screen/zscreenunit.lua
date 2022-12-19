@@ -1,6 +1,7 @@
 local WIDGET = require("widgets/screen")
 local ZDEBUG = require("debug/debug")
 local TEMPLATES = require("widgets/redux/templates")
+local ImageButton = require "widgets/imagebutton"
 require("strings")
 
 local z_widget_index = 0
@@ -13,6 +14,15 @@ local ZScreenUnit = Class(WIDGET, function(self, parent, objdata)
     self.parent = parent
     self.panelposx = objdata["posx"] or 0
     self.panelposy = objdata["posy"] or 0
+
+    self.black = self:AddChild(ImageButton("images/global.xml", "square.tex"))
+    self.black.image:SetVRegPoint(ANCHOR_MIDDLE)
+    self.black.image:SetHRegPoint(ANCHOR_MIDDLE)
+    self.black.image:SetVAnchor(ANCHOR_MIDDLE)
+    self.black.image:SetHAnchor(ANCHOR_MIDDLE)
+    self.black.image:SetScaleMode(SCALEMODE_FILLSCREEN)
+    self.black.image:SetTint(0,0,0,0) -- invisible, but clickable!
+    self.black:SetOnClick(function() self:Close() end)
 
     self.topright_root = self:AddChild(WIDGET("z_side"))
     self.topright_root:SetScaleMode(SCALEMODE_PROPORTIONAL)

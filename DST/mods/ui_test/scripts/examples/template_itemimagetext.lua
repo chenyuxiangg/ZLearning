@@ -18,8 +18,7 @@ local itemimagetext = function(self)
             ["posy"] = nil,
         }
         local zs = SZ(self, objdata)
-        -- zs:Show()
-        TheFrontEnd:PushScreen(PauseScreen())
+        zs:Show()
         return zs
     end
 
