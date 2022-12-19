@@ -1,5 +1,6 @@
 local SZ = require("screen/zscreenunit")
 local TEMPLATES = require("widgets/redux/templates")
+local PauseScreen = require "screens/redux/pausescreen"
 require("fonts")
 
 local itemimagetext = function(self)
@@ -17,7 +18,8 @@ local itemimagetext = function(self)
             ["posy"] = nil,
         }
         local zs = SZ(self, objdata)
-        zs:Show()
+        -- zs:Show()
+        TheFrontEnd:PushScreen(PauseScreen())
         return zs
     end
 
