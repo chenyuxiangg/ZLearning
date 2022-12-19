@@ -22,6 +22,9 @@ local ZScreenUnit = Class(WIDGET, function(self, parent, objdata)
     self.topright_root = self.topright_root:AddChild(WIDGET("tr_z_side"))
 
     self.panel = self.topright_root:AddChild(objdata["obj"])
+
+    self.default_focus = self.panel
+    -- TheInputProxy:SetCursorVisible(true)
 end)
 
 function ZScreenUnit:Show()
