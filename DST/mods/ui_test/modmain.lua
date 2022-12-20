@@ -1,4 +1,5 @@
-local fn = require "examples/template_itemimagetext"
+local TMIIT = require "examples/template_itemimagetext"
+local TMIB = require "examples/template_iconbutton"
 local ZDEBUG = require("debug/debug")
 local _g = GLOBAL
 
@@ -6,13 +7,14 @@ local function KillZscreenByKeyK(key, down)
     if not down then
         return
     end
+    local curscrenn = TheFrontEnd:GetActiveScreen()
+    if string.match(curscrenn.name, "Zscreen") == curscrenn.name then
+        TheFrontEnd:PopScreen(curscrenn)
+    end
     if _g.TheInput:IsKeyDown(_g.KEY_K) then
-        local curscrenn = TheFrontEnd:GetActiveScreen()
-        if string.match(curscrenn.name, "Zscreen") == curscrenn.name then
-            TheFrontEnd:PopScreen(curscrenn)
-        else
-            fn()
-        end
+        TMIIT()
+    else if _g.TheInput:IsKeyDown(_g.KEY_L) then
+        TMIB()
     end
 end
 

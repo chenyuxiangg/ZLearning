@@ -10,7 +10,7 @@ local itemimagetext = function()
     local ITEM_SCALE = 1
 
     local iit = TEMPLATES.ItemImageText("body", "body_default1", ITEM_SCALE, FONT, FONT_SIZE, "test", GREY, TEXT_WIDTH, TEXT_OFFSET)
-    local zs = ZS(self)
+    local zs = ZS()
     zs.left_root:AddChild(iit)
     TheFrontEnd:PushScreen(zs)
     return zs

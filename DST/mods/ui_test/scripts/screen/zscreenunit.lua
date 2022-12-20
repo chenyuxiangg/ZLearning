@@ -2,9 +2,8 @@ local WIDGET = require("widgets/widget")
 local SCREEN = require("widgets/screen")
 local ImageButton = require "widgets/imagebutton"
 
-local ZScreenUnit = Class(SCREEN, function(self, parent)
+local ZScreenUnit = Class(SCREEN, function(self)
     SCREEN._ctor(self, "Zscreen")
-    self.parent = parent
 
     self.black = self:AddChild(ImageButton("images/global.xml", "square.tex"))
     self.black.image:SetVRegPoint(ANCHOR_MIDDLE)
