@@ -1,6 +1,7 @@
 local TMIIT = require "examples/template_itemimagetext"
 local TMIB = require "examples/template_iconbutton"
 local TMCW = require "examples/template_curlywindow"
+local TMBDG = require "examples/template_announcementbadge"
 local ZDEBUG = require("debug/debug")
 local _g = GLOBAL
 
@@ -18,6 +19,8 @@ local function KillZscreenByKeyK(key, down)
         TMIB()
     elseif _g.TheInput:IsKeyDown(_g.KEY_J) then
         TMCW()
+    elseif _g.TheInput:IsKeyDown(_g.KEY_I) then
+        TMBDG()
     end
 end
 
