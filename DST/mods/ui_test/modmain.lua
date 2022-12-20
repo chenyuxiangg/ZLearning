@@ -15,7 +15,7 @@ local function KillZscreenByKeyK(key, down)
     if _g.TheInput:IsKeyDown(_g.KEY_K) then
         ZDEBUG:zprint("K is down, zs push.")
         TMIIT()
-    else if _g.TheInput:IsKeyDown(_g.KEY_L) then
+    elseif _g.TheInput:IsKeyDown(_g.KEY_L) then
         ZDEBUG:zprint("L is down, zs push")
         TMIB()
     end
