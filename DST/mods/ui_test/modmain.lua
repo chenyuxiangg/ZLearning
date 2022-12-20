@@ -12,6 +12,7 @@ local function KillZscreenByKeyK(key, down)
             TheFrontEnd:PopScreen(curscrenn)
         else
             fn()
+        end
     end
 end
 
