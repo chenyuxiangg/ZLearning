@@ -44,28 +44,4 @@ function ZScreenUnit:Close()
     TheFrontEnd:PopScreen(self)
 end
 
--- function ZScreenUnit:OnBecomeActive()
---     TheSim:SetUIRoot(self.inst.entity)
---     if self.last_focus and self.last_focus.inst.entity:IsValid() then
---         self.last_focus:SetFocus()
---     else
---         self.last_focus = nil
---         if self.default_focus then
---             self.default_focus:SetFocus()
---         end
---     end
--- end
-
--- function ZScreenUnit:OnBecomeInactive()
---     self.last_focus = self:GetDeepestFocus()
--- end
-
--- function ZScreenUnit:OnUpdate(dt)
---     return true
--- end
-    
--- function ZScreenUnit:OnDestroy()
---     self:Kill()
--- end
-
 return ZScreenUnit
