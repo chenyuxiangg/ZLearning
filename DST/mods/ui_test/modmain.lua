@@ -8,9 +8,10 @@ local function KillZscreenByKeyK(key, down)
     end
     if _g.TheInput:IsKeyDown(_g.KEY_K) then
         local curscrenn = TheFrontEnd:GetActiveScreen()
-        if string.match(curscrenn.name, "Zscreen_%d+") == curscrenn.name then
-            curscrenn.Close()
-        end
+        if string.match(curscrenn.name, "Zscreen") == curscrenn.name then
+            TheFrontEnd:PopScreen(curscrenn)
+        else
+            fn()
     end
 end
 
@@ -19,4 +20,4 @@ local function Simfn()
 end
 
 AddSimPostInit(Simfn)
-AddClassPostConstruct("screens/playerhud", fn)
+-- AddClassPostConstruct("screens/playerhud", fn)
