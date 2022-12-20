@@ -9,11 +9,14 @@ local function KillZscreenByKeyK(key, down)
     end
     local curscrenn = TheFrontEnd:GetActiveScreen()
     if string.match(curscrenn.name, "Zscreen") == curscrenn.name then
+        ZDEBUG:zprint("zs pop.")
         TheFrontEnd:PopScreen(curscrenn)
     end
     if _g.TheInput:IsKeyDown(_g.KEY_K) then
+        ZDEBUG:zprint("K is down, zs push.")
         TMIIT()
     else if _g.TheInput:IsKeyDown(_g.KEY_L) then
+        ZDEBUG:zprint("L is down, zs push")
         TMIB()
     end
 end
