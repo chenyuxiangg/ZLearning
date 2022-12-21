@@ -2,7 +2,7 @@ local ZS = require("screen/zscreenunit")
 local GetAvatar = require("widgets/bantab").GetAvatar
 local GetAvatarAtlas = require("widgets/bantab").GetAvatarAtlas
 
-local iconbutton = function()
+local header = function()
     local zs = ZS()
     local header_bg = zs.middle_root:AddChild(Image("images/avatars.xml", "avatar_bg.tex"))
     local header_icon = zs.middle_root:AddChild(Image(GetAvatarAtlas("wilson", false), GetAvatar("wilson", false)))
@@ -12,4 +12,4 @@ local iconbutton = function()
     return zs
 end
 
-return iconbutton
+return header
