@@ -20,7 +20,12 @@ end
 
 local function Simfn()
     _g.TheInput:AddKeyHandler(DealByKeyK)
-    _g.TheInput:AddMouseButtonHandler()
+    -- _g.TheInput:AddMouseButtonHandler()
+end
+
+AddSimPostInit(Simfn)
+AddClassPostConstruct("screens/playerhud", fn)
+AddClassPostConstruct("widgets/widget", function(self)
     local old_OnMouseButton = Widget.OnMouseButton
     Widget.OnMouseButton = function(self, button, down, x, y)
         if self.name ~= nil then
@@ -30,7 +35,4 @@ local function Simfn()
         end
         return old_OnMouseButton(self, button, down, x, y)
     end
-end
-
-AddSimPostInit(Simfn)
-AddClassPostConstruct("screens/playerhud", fn)
+)
