@@ -2,7 +2,7 @@ local fn = require "examples/template_votecontrol"
 local ZDEBUG = require("debug/debug")
 local _g = GLOBAL
 
-require("widgets/widget")
+local Widget = require("widgets/widget")
 
 local function DealByKeyK(key, down)
     if not down then
