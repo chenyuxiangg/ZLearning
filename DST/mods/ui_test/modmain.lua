@@ -19,7 +19,7 @@ local function DealByKeyK(key, down)
 end
 
 local function OnMouseButton(self, button, down, x, y)
-    if self.name != nil then
+    if self.name ~= nil then
         ZDEBUG:zprint("cyx: " .. self.name)
     end
     if not self.focus then return false end
