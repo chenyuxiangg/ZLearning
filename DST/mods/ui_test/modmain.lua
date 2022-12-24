@@ -33,6 +33,7 @@ AddClassPostConstruct("widgets/widget", function(self)
         else
             ZDEBUG:zprint("no name attr.")
         end
-        return old_OnMouseButton(self, button, down, x, y)
+        old_OnMouseButton(self, button, down, x, y)
     end
+end
 )
