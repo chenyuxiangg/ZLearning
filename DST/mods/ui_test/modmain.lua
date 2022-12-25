@@ -50,7 +50,7 @@ local function DealByKeyK(key, down)
         if curscreen.name == "HUD" and curscreen.votewindow then
             curscreen:UpdateHeaderInfo("y", "sub")
         end
-    elseif _g.TheInput:IsKeyDown(_g.KEY_C) then
+    elseif _g.TheInput:IsKeyDown(_g.KEY_N) then
         local curscreen = TheFrontEnd:GetActiveScreen()
         if curscreen.name == "HUD" and curscreen.votewindow then
             curscreen:UpdateHeaderInfo("sx", "sub")
