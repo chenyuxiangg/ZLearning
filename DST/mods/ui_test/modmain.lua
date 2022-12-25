@@ -20,6 +20,51 @@ local function DealByKeyK(key, down)
                 curscreen.votewindow.open = false
             end
         end
+    elseif _g.TheInput:IsKeyDown(_g.KEY_G) then
+        local curscreen = TheFrontEnd:GetActiveScreen()
+        if curscreen.name == "HUD" and curscreen.votewindow then
+            curscreen:UpdateHeaderInfo("x", "add")
+        end
+    elseif _g.TheInput:IsKeyDown(_g.KEY_H) then
+        local curscreen = TheFrontEnd:GetActiveScreen()
+        if curscreen.name == "HUD" and curscreen.votewindow then
+            curscreen:UpdateHeaderInfo("y", "add")
+        end
+    elseif _g.TheInput:IsKeyDown(_g.KEY_J) then
+        local curscreen = TheFrontEnd:GetActiveScreen()
+        if curscreen.name == "HUD" and curscreen.votewindow then
+            curscreen:UpdateHeaderInfo("sx", "add")
+        end
+    elseif _g.TheInput:IsKeyDown(_g.KEY_L) then
+        local curscreen = TheFrontEnd:GetActiveScreen()
+        if curscreen.name == "HUD" and curscreen.votewindow then
+            curscreen:UpdateHeaderInfo("sy", "add")
+        end
+    elseif _g.TheInput:IsKeyDown(_g.KEY_Z) then
+        local curscreen = TheFrontEnd:GetActiveScreen()
+        if curscreen.name == "HUD" and curscreen.votewindow then
+            curscreen:UpdateHeaderInfo("x", "sub")
+        end
+    elseif _g.TheInput:IsKeyDown(_g.KEY_X) then
+        local curscreen = TheFrontEnd:GetActiveScreen()
+        if curscreen.name == "HUD" and curscreen.votewindow then
+            curscreen:UpdateHeaderInfo("y", "sub")
+        end
+    elseif _g.TheInput:IsKeyDown(_g.KEY_C) then
+        local curscreen = TheFrontEnd:GetActiveScreen()
+        if curscreen.name == "HUD" and curscreen.votewindow then
+            curscreen:UpdateHeaderInfo("sx", "sub")
+        end
+    elseif _g.TheInput:IsKeyDown(_g.KEY_V) then
+        local curscreen = TheFrontEnd:GetActiveScreen()
+        if curscreen.name == "HUD" and curscreen.votewindow then
+            curscreen:UpdateHeaderInfo("sy", "sub")
+        end
+    elseif _g.TheInput:IsKeyDown(_g.KEY_B) then
+        local curscreen = TheFrontEnd:GetActiveScreen()
+        if curscreen.name == "HUD" and curscreen.votewindow then
+            curscreen:GetHeaderInfo()
+        end
     end
 end
 
