@@ -4,7 +4,7 @@ local vote = function(self)
     function self:OpenVote()
         if self.votewindow then
             self.votewindow.open = true
-            self.votewindow:MoveTo(Vector3(0, -100, 0), Vector3(0, -50, 0), .33, fn)
+            self.votewindow:MoveTo(Vector3(0, -100, 0), Vector3(0, -50, 0), .33, nil)
             self.votewindow:Show()
         end
     end
