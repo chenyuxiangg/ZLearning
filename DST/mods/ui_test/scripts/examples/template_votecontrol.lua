@@ -12,35 +12,22 @@ local vote = function(self)
     function self:UpdateHeaderInfo(infotype, dir)
         if infotype == "x" then
             if dir == "add" then
-                self.votewindow.scrollbarline_x = self.votewindow.scrollbarline_x+1
+                self.votewindow.textlable_x = self.votewindow.textlable_x+1
             elseif dir == "sub" then
-                self.votewindow.scrollbarline_x = self.votewindow.scrollbarline_x-1
+                self.votewindow.textlable_x = self.votewindow.textlable_x-1
             end
         elseif infotype == "y" then
             if dir == "add" then
-                self.votewindow.scrollbarline_y = self.votewindow.scrollbarline_y+1
+                self.votewindow.textlable_y = self.votewindow.textlable_y+1
             elseif dir == "sub" then
-                self.votewindow.scrollbarline_y = self.votewindow.scrollbarline_y-1
-            end
-        elseif infotype == "sx" then
-            if dir == "add" then
-                self.votewindow.scrollbarline_sx = self.votewindow.scrollbarline_sx+0.1
-            elseif dir == "sub" then
-                self.votewindow.scrollbarline_sx = self.votewindow.scrollbarline_sx-0.1
-            end
-        elseif infotype == "sy" then
-            if dir == "add" then
-                self.votewindow.scrollbarline_sy = self.votewindow.scrollbarline_sy+0.1
-            elseif dir == "sub" then
-                self.votewindow.scrollbarline_sy = self.votewindow.scrollbarline_sy-0.1
+                self.votewindow.textlable_y = self.votewindow.textlable_y-1
             end
         end
-        self.votewindow.scrollbarline:SetPosition(self.votewindow.scrollbarline_x, self.votewindow.scrollbarline_y, 0)
-        self.votewindow.scrollbarline:SetScale(self.votewindow.scrollbarline_sx, self.votewindow.scrollbarline_sy, 0)
+        self.votewindow.label:SetPosition(self.votewindow.textlable_x, self.votewindow.textlable_y, 0)
     end
 
     function self:GetHeaderInfo()
-        print("x: ", self.votewindow.scrollbarline_x, ", y: ", self.votewindow.scrollbarline_y, ", sx: ", self.votewindow.scrollbarline_sx, ", sy: ", self.votewindow.scrollbarline_sy)
+        print("x: ", self.votewindow.textlable_x, ", y: ", self.votewindow.textlable_y)
     end
 
     self.ztopmiddle_root = self:AddChild(WIDGET("ztopmiddle_root"))
@@ -66,6 +53,9 @@ local vote = function(self)
     self.votewindow.scrollbarline_sx = 0.2
     self.votewindow.scrollbarline_sy = 0.2
 
+    self.votewindow.textlable_x = -87
+    self.votewindow.textlable_y = 10.5
+
     self.votewindow.header_bg = self.votewindow:AddChild(Image("images/avatars.xml", "avatar_bg.tex"))
     self.votewindow.header_icon = self.votewindow:AddChild(Image("images/avatars.xml", "avatar_wilson.tex"))
     self.votewindow.header_frame = self.votewindow:AddChild(Image("images/avatars.xml", "avatar_frame_white.tex"))
@@ -79,6 +69,10 @@ local vote = function(self)
     self.votewindow.scrollbarline = self.votewindow:AddChild(Image("images/crafting_menu.xml", "scrollbar_bar.tex"))
     self.votewindow.scrollbarline:SetPosition(self.votewindow.scrollbarline_x, self.votewindow.scrollbarline_y, 0)
     self.votewindow.scrollbarline:SetScale(self.votewindow.scrollbarline_sx, self.votewindow.scrollbarline_sy, 0)
+
+    local labeltext = "这是一个文本测试, 来自于Z。测试时间:2022年12月25日,星期天."
+    self.votewindow.label = self.votewindow:AddChild(Text(NEWFONT, 25, labeltext))
+    self.votewindow.label:SetPosition(self.votewindow.textlable_x, self.votewindow.textlable_y, 0)
 
     self.votewindow.open = false
     self.votewindow:Hide()
