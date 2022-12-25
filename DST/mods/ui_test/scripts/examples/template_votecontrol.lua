@@ -76,7 +76,7 @@ local vote = function(self)
     self.votewindow.header_frame:SetPosition(self.votewindow.header_x, self.votewindow.header_y, 0)
     self.votewindow.header_frame:SetScale(self.votewindow.header_sx, self.votewindow.header_sy, 0)
 
-    self.votewindow.scrollbarline = self.votewindow:AddChild(Image("images/ui.xml", "scrollbarline.tex"))
+    self.votewindow.scrollbarline = self.votewindow:AddChild(Image("images/crafting_menu.xml", "scrollbar_bar.tex"))
     self.votewindow.scrollbarline:SetPosition(self.votewindow.scrollbarline_x, self.votewindow.scrollbarline_y, 0)
     self.votewindow.scrollbarline:SetScale(self.votewindow.scrollbarline_sx, self.votewindow.scrollbarline_sy, 0)
 
