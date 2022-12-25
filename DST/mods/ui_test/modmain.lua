@@ -24,9 +24,9 @@ local function DealByMouseButton(button, down, x, y)
     -- world_pos = _g.TheInput:GetWorldPosition()
     -- target = _g.TheInput:GetWorldEntityUnderMouse()
     target = TheSim:GetEntitiesAtScreenPoint(TheSim:GetPosition())
-    if target then
+    if target and target.value then
         ZDEBUG:zprint("cyx: ")
-        ZDEBUG:zprint(target)
+        ZDEBUG:zprint(target.value)
     end
 end
 
