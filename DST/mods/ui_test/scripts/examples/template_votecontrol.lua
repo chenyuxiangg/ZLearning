@@ -56,13 +56,14 @@ local vote = function(self)
 
     self.vote_scale_x = 2
     self.vote_scale_y = 1.5
+
+    self.votewindow = self.ztopmiddle_root:AddChild(Image("images/ui.xml", "votewindow_controller_bottom.tex"))
+    self.votewindow:SetScale(self.vote_scale_x, self.vote_scale_y, 1)
+
     self.votewindow.header_x = 20
     self.votewindow.header_y = -25
     self.votewindow.header_sx = 0.5
     self.votewindow.header_sy = 0.5
-
-    self.votewindow = self.ztopmiddle_root:AddChild(Image("images/ui.xml", "votewindow_controller_bottom.tex"))
-    self.votewindow:SetScale(self.vote_scale_x, self.vote_scale_y, 1)
 
     self.votewindow.header_bg = self.votewindow:AddChild(Image("images/avatars.xml", "avatar_bg.tex"))
     self.votewindow.header_icon = self.votewindow:AddChild(Image("images/avatars.xml", "avatar_wilson.tex"))
