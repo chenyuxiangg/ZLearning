@@ -15,26 +15,20 @@ local vote = function(self)
     self.ztopmiddle_root:SetMaxPropUpscale(MAX_HUD_SCALE)
     self.ztopmiddle_root = self.ztopmiddle_root:AddChild(WIDGET("real_ztopmiddle"))
 
-    self.vote_pos_x = 0
-    self.vote_pos_y = -50
     self.vote_scale_x = 2
     self.vote_scale_y = 1.5
 
     self.votewindow = self.ztopmiddle_root:AddChild(Image("images/ui.xml", "votewindow_controller_bottom.tex"))
-    self.votewindow:SetPosition(self.vote_pos_x, self.vote_pos_y, 0)
     self.votewindow:SetScale(self.vote_scale_x, self.vote_scale_y, 1)
 
     self.votewindow.header_bg = self.votewindow:AddChild(Image("images/avatars.xml", "avatar_bg.tex"))
     self.votewindow.header_icon = self.votewindow:AddChild(Image("images/avatars.xml", "avatar_wilson.tex"))
     self.votewindow.header_frame = self.votewindow:AddChild(Image("images/avatars.xml", "avatar_frame_white.tex"))
-    self.votewindow.header_bg:SetHAnchor(ANCHOR_LEFT)
-    self.votewindow.header_bg:SetVAnchor(ANCHOR_MIDDLE)
+    self.votewindow.header_bg:SetPosition(20, -25, 0)
     self.votewindow.header_bg:SetScale(0.5, 0.5, 0)
-    self.votewindow.header_icon:SetHAnchor(ANCHOR_LEFT)
-    self.votewindow.header_icon:SetVAnchor(ANCHOR_MIDDLE)
+    self.votewindow.header_icon:SetPosition(20, -25, 0)
     self.votewindow.header_icon:SetScale(0.5, 0.5, 0)
-    self.votewindow.header_frame:SetHAnchor(ANCHOR_LEFT)
-    self.votewindow.header_frame:SetVAnchor(ANCHOR_MIDDLE)
+    self.votewindow.header_frame:SetPosition(20, -25, 0)
     self.votewindow.header_frame:SetScale(0.5, 0.5, 0)
 
     self.votewindow.open = false
