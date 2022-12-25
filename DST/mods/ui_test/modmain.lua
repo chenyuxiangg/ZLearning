@@ -11,9 +11,12 @@ local function DealByKeyK(key, down)
     if _g.TheInput:IsKeyDown(_g.KEY_K) then
         local curscreen = TheFrontEnd:GetActiveScreen()
         ZDEBUG:zprint(urscreen.name)
-        if curscreen.name == "screenroot" and curscreen.votewindow ~= nil then
-            ZDEBUG:zprint("clear votewindow focus.")
-            curscreen.votewindow:ClearFocus()
+        if curscreen.name == "screenroot" ~curscreen.votewindow.open then
+            ZDEBUG:zprint("votewindow focus.")
+            curscreen:OpenVote()
+        else 
+            curscreen.votewindow:Hide()
+            curscreen.votewindow.open = false
         end
     end
 end
