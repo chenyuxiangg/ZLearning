@@ -18,22 +18,15 @@ local function DealByKeyK(key, down)
     end
 end
 
+local function DealByMouseButton(button, down, x, y)
+    pos = TheSim:GetPosition()
+    ZDEBUG:zprint(pos)
+end
+
 local function Simfn()
     _g.TheInput:AddKeyHandler(DealByKeyK)
-    -- _g.TheInput:AddMouseButtonHandler()
+    _g.TheInput:AddMouseButtonHandler(DealByMouseButton)
 end
 
 AddSimPostInit(Simfn)
 AddClassPostConstruct("screens/playerhud", fn)
-AddClassPostConstruct("widgets/widget", function(self)
-    local old_OnMouseButton = Widget.OnMouseButton
-    Widget.OnMouseButton = function(self, button, down, x, y)
-        if self.name ~= nil then
-            ZDEBUG:zprint("cyx:" .. self.name)
-        else
-            ZDEBUG:zprint("no name attr.")
-        end
-        old_OnMouseButton(self, button, down, x, y)
-    end
-end
-)
