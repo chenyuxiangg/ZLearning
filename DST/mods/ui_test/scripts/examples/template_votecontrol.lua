@@ -61,10 +61,10 @@ local vote = function(self)
     self.votewindow.header_sx = 0.4
     self.votewindow.header_sy = 0.5
 
-    self.votewindow.scrollbarline_x = -110
+    self.votewindow.scrollbarline_x = -87
     self.votewindow.scrollbarline_y = 10.5
-    self.votewindow.scrollbarline_sx = 0.4
-    self.votewindow.scrollbarline_sy = 0.5
+    self.votewindow.scrollbarline_sx = 0.2
+    self.votewindow.scrollbarline_sy = 0.2
 
     self.votewindow.header_bg = self.votewindow:AddChild(Image("images/avatars.xml", "avatar_bg.tex"))
     self.votewindow.header_icon = self.votewindow:AddChild(Image("images/avatars.xml", "avatar_wilson.tex"))
