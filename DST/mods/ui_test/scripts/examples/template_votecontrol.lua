@@ -25,7 +25,7 @@ local vote = function(self)
         elseif infotype == "sx" then
             if dir == "add" then
                 self.votewindow.header_sx = self.votewindow.header_sx+0.1
-            elseif dir == "sun" then
+            elseif dir == "sub" then
                 self.votewindow.header_sx = self.votewindow.header_sx-0.1
             end
         elseif infotype == "sy" then
@@ -60,7 +60,7 @@ local vote = function(self)
     self.votewindow = self.ztopmiddle_root:AddChild(Image("images/ui.xml", "votewindow_controller_bottom.tex"))
     self.votewindow:SetScale(self.vote_scale_x, self.vote_scale_y, 1)
 
-    self.votewindow.header_x = -105
+    self.votewindow.header_x = -106
     self.votewindow.header_y = 7.5
     self.votewindow.header_sx = 0.5
     self.votewindow.header_sy = 0.5
