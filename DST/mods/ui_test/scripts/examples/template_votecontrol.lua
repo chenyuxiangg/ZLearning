@@ -12,15 +12,15 @@ local vote = function(self)
     function self:UpdateHeaderInfo(infotype, dir)
         if infotype == "x" then
             if dir == "add" then
-                self.votewindow.header_x = self.votewindow.header_x+0.1
+                self.votewindow.header_x = self.votewindow.header_x+1
             elseif dir == "sub" then
-                self.votewindow.header_x = self.votewindow.header_x-0.1
+                self.votewindow.header_x = self.votewindow.header_x-1
             end
         elseif infotype == "y" then
             if dir == "add" then
-                self.votewindow.header_y = self.votewindow.header_y+0.1
+                self.votewindow.header_y = self.votewindow.header_y+1
             elseif dir == "sub" then
-                self.votewindow.header_y = self.votewindow.header_y-0.1
+                self.votewindow.header_y = self.votewindow.header_y-1
             end
         elseif infotype == "sx" then
             if dir == "add" then
