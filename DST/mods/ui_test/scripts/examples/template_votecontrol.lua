@@ -1,4 +1,5 @@
 local WIDGET = require("widgets/widget")
+local Text = require "widgets/text"
 
 local vote = function(self)
     function self:OpenVote()
