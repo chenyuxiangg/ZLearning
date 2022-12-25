@@ -19,8 +19,12 @@ local function DealByKeyK(key, down)
 end
 
 local function DealByMouseButton(button, down, x, y)
-    pos = TheSim:GetPosition()
-    ZDEBUG:zprint(pos)
+    sim_x,sim_y = TheSim:GetPosition()
+    screen_pos = _g.TheInput:GetScreenPosition()
+    world_pos = _g.TheInput:GetWorldPosition()
+    print("sim: (", x, ", ", y, ")")
+    print("screen: ", screen_pos)
+    print("world: ", world_pos)
 end
 
 local function Simfn()
