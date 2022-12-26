@@ -54,8 +54,10 @@ local vote = function(self)
     self.votewindow.scrollbarline_sx = 0.2
     self.votewindow.scrollbarline_sy = 0.2
 
-    self.votewindow.textlable_x = -87
-    self.votewindow.textlable_y = 10.5
+    self.votewindow.textlable_x = 17
+    self.votewindow.textlable_y = 23.5
+    self.votewindow.textlable_w = 50
+    self.votewindow.textlable_h = 20
 
     self.votewindow.header_bg = self.votewindow:AddChild(Image("images/avatars.xml", "avatar_bg.tex"))
     self.votewindow.header_icon = self.votewindow:AddChild(Image("images/avatars.xml", "avatar_wilson.tex"))
@@ -71,9 +73,10 @@ local vote = function(self)
     self.votewindow.scrollbarline:SetPosition(self.votewindow.scrollbarline_x, self.votewindow.scrollbarline_y, 0)
     self.votewindow.scrollbarline:SetScale(self.votewindow.scrollbarline_sx, self.votewindow.scrollbarline_sy, 0)
 
-    local labeltext = "这是一个文本测试, 来自于Z。测试时间:2022年12月25日,星期天."
-    self.votewindow.label = self.votewindow:AddChild(Text(NEWFONT, 12, labeltext))
+    local labeltext = "这是一个文本测试, 来自于Z。测试时间:2022年12月25日,星期天.hahahhahhahahahahhahahhahha"
+    self.votewindow.label = self.votewindow:AddChild(Text(NEWFONT, 12, labeltext, {0, 0, 0 ,1}))
     self.votewindow.label:SetPosition(self.votewindow.textlable_x, self.votewindow.textlable_y, 0)
+    self.votewindow.label:SetRegionSize(self.votewindow.textlable_w, self.votewindow.textlable_h)
 
     self.votewindow.open = false
     self.votewindow:Hide()
