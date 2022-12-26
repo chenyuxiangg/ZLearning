@@ -77,7 +77,7 @@ local vote = function(self)
     self.votewindow.scrollbarline:SetPosition(self.votewindow.scrollbarline_x, self.votewindow.scrollbarline_y, 0)
     self.votewindow.scrollbarline:SetScale(self.votewindow.scrollbarline_sx, self.votewindow.scrollbarline_sy, 0)
 
-    local labeltext = "这是一个文本测试, 来自于Z。测试时间:2022年12月25日,星期天。"
+    local labeltext = "这是一个文本测试, 来自于Z。测试时间:2022年12月25日,星期天。hahahahahahahahahahahha"
     local text_len = #labeltext
     local show_text = ""
     for i=1, text_len/row_letter_count do
@@ -86,7 +86,6 @@ local vote = function(self)
     self.votewindow.label = self.votewindow:AddChild(Text(NEWFONT, 12, show_text, {0, 0, 0 ,1}))
     self.votewindow.label:SetPosition(self.votewindow.textlable_x, self.votewindow.textlable_y, 0)
     self.votewindow.label:SetRegionSize(letter_w*row_letter_count, (text_len/row_letter_count + 1)*letter_h)
-    print("text_len: ", text_len, "w: ", letter_w*row_letter_count, "h: ", (text_len/row_letter_count + 1)*letter_h)
 
     self.votewindow.open = false
     self.votewindow:Hide()
