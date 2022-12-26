@@ -72,7 +72,7 @@ local vote = function(self)
     self.votewindow.scrollbarline:SetScale(self.votewindow.scrollbarline_sx, self.votewindow.scrollbarline_sy, 0)
 
     local labeltext = "这是一个文本测试, 来自于Z。测试时间:2022年12月25日,星期天."
-    self.votewindow.label = self.votewindow:AddChild(Text(NEWFONT, 25, labeltext))
+    self.votewindow.label = self.votewindow:AddChild(Text(NEWFONT, 12, labeltext))
     self.votewindow.label:SetPosition(self.votewindow.textlable_x, self.votewindow.textlable_y, 0)
 
     self.votewindow.open = false
