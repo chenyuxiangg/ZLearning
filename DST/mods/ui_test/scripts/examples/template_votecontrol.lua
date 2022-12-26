@@ -80,7 +80,7 @@ local vote = function(self)
     local labeltext = "这是一个文本测试, 来自于Z。测试时间:2022年12月25日,星期天.hahahhahhahahahahhahahhahha"
     local text_len = #labeltext
     local show_text = ""
-    for i=1, i <= text_len/row_letter_count do
+    for i=1, text_len/row_letter_count do
         show_text = show_text .. string.sub( labeltext, (i-1)*row_letter_count + 1, i*row_letter_count < text_len and i*row_letter_count or text_len) .. "\n"
     end
     self.votewindow.label = self.votewindow:AddChild(Text(NEWFONT, 12, show_text, {0, 0, 0 ,1}))
