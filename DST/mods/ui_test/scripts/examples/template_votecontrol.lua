@@ -86,6 +86,7 @@ local vote = function(self)
     self.votewindow.label = self.votewindow:AddChild(Text(NEWFONT, 12, show_text, {0, 0, 0 ,1}))
     self.votewindow.label:SetPosition(self.votewindow.textlable_x, self.votewindow.textlable_y, 0)
     self.votewindow.label:SetRegionSize(letter_w*row_letter_count, (text_len/row_letter_count + 1)*letter_h)
+    print("text_len: ", text_len, "w: ", letter_w*row_letter_count, "h: ", (text_len/row_letter_count + 1)*letter_h)
 
     self.votewindow.open = false
     self.votewindow:Hide()
