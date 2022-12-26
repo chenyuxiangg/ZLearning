@@ -83,9 +83,9 @@ local vote = function(self)
     for i=1, i <= text_len/row_letter_count do
         show_text = show_text .. string.sub( labeltext, (i-1)*row_letter_count + 1, i*row_letter_count < text_len and i*row_letter_count or text_len) .. "\n"
     end
-    self.votewindow.label = self.votewindow:AddChild(Text(NEWFONT, 12, labeltext, {0, 0, 0 ,1}))
+    self.votewindow.label = self.votewindow:AddChild(Text(NEWFONT, 12, show_text, {0, 0, 0 ,1}))
     self.votewindow.label:SetPosition(self.votewindow.textlable_x, self.votewindow.textlable_y, 0)
-    self.votewindow.label:SetRegionSize(self.votewindow.textlable_w, self.votewindow.textlable_h)
+    self.votewindow.label:SetRegionSize(letter_w*row_letter_count, (text_len/row_letter_count + 1)*letter_h)
 
     self.votewindow.open = false
     self.votewindow:Hide()
