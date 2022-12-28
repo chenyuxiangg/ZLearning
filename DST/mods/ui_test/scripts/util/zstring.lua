@@ -38,16 +38,17 @@ function Zstring:getCharacterLength()
 end
 
 function Zstring:substr(startPos, characterCount)
-    local curPos = startPos ~= nil and startPos or self.curPos
+    local sp = startPos ~= nil and startPos or self.curPos
+    local ep = sp
     for i = 1, characterCount do
-        self:getNextStepByPos(curPos)
-        curPos = curPos + self.curStep
-        if curPos >= #self.str then
+        self:getNextStepByPos(ep)
+        ep = ep + self.curStep
+        if ep >= #self.str then
             break
         end
     end
-    self.curPos = curPos
-    return string.sub(self.str, startPos, curPos)
+    self.curPos = ep
+    return string.sub(self.str, sp, ep)
 end
 
 return Zstring
