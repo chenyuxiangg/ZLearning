@@ -1,5 +1,6 @@
 local WIDGET = require("widgets/widget")
 local Text = require "widgets/text"
+local Zstring = require("util/zstring")
 
 local vote = function(self)
     function self:OpenVote()
@@ -77,11 +78,11 @@ local vote = function(self)
     self.votewindow.scrollbarline:SetPosition(self.votewindow.scrollbarline_x, self.votewindow.scrollbarline_y, 0)
     self.votewindow.scrollbarline:SetScale(self.votewindow.scrollbarline_sx, self.votewindow.scrollbarline_sy, 0)
 
-    local labeltext = "这是一个文本测试, 来自于Z。测试时间:2022年12月25日,星期天。hahahahahahahahahahahha，小赤佬，我是小帅翔，帅翔帅翔帅翔。"
-    local text_len = #labeltext
+    local labeltext = Zstring("这是一个文本测试,来自于Z.测试时间:2022年12月25日,星期天.hahahahahahahahahahahha,小赤佬,我是小帅翔,帅翔帅翔帅翔.")
+    local text_len = labeltext:getCharacterLength()
     local show_text = ""
-    for i=1, text_len/row_letter_count do
-        show_text = show_text .. string.sub( labeltext, i == 1 and 1 or ((i-1)*row_letter_count+1)*3, (i*row_letter_count)*3 < text_len and (i*row_letter_count)*3 or text_len) .. "\n"
+    for i=1, text_len/row_letter_count + 1 do
+        show_text = show_text .. labeltext:substr(nil, row_letter_count) .. "\n"
     end
     self.votewindow.label = self.votewindow:AddChild(Text(NEWFONT, 12, show_text, {0, 0, 0 ,1}))
     self.votewindow.label:SetPosition(self.votewindow.textlable_x, self.votewindow.textlable_y, 0)
