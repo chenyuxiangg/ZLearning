@@ -1,15 +1,15 @@
 local ZDEBUG = require("debug/debug")
 local Zthoughtpanel = require("screen/zthoughtpanel")
-local Widget = require("widgets/widget")
+local WIDGET = require("widgets/widget")
 local _g = GLOBAL
 
 local fn = function(self)
-    self.ztopmiddle_root = self:AddChild(Widget("ztopmiddle_root"))
-    -- self.ztopmiddle_root:SetScaleMode(SCALEMODE_PROPORTIONAL)
+    self.ztopmiddle_root = self:AddChild(WIDGET("ZTopMiddleRoot"))
+    self.ztopmiddle_root:SetScaleMode(SCALEMODE_PROPORTIONAL)
     self.ztopmiddle_root:SetHAnchor(ANCHOR_MIDDLE)
     self.ztopmiddle_root:SetVAnchor(ANCHOR_TOP)
     self.ztopmiddle_root:SetMaxPropUpscale(MAX_HUD_SCALE)
-    self.ztopmiddle_root = self.ztopmiddle_root:AddChild(WIDGET("real_ztopmiddle"))
+    self.ztopmiddle_root = self.ztopmiddle_root:AddChild(WIDGET("real_ZTopMiddleRoot"))
 
     self.zthoughtpanel = self.ztopmiddle_root:AddChild(Zthoughtpanel(self))
     local testStr = "这是一个文本测试,来自于Z.测试时间:2022年12月25日,星期天.hahahahahahahahahahahha,小赤佬,我是小帅翔,帅翔帅翔帅翔."
