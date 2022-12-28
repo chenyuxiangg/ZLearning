@@ -1,9 +1,10 @@
 local ZDEBUG = require("debug/debug")
 local Zthoughtpanel = require("screen/zthoughtpanel")
+local Widget = require("widgets/widget")
 local _g = GLOBAL
 
 local fn = function(self)
-    self.ztopmiddle_root = self:AddChild(WIDGET("ztopmiddle_root"))
+    self.ztopmiddle_root = self:AddChild(Widget("ztopmiddle_root"))
     self.ztopmiddle_root:SetScaleMode(SCALEMODE_PROPORTIONAL)
     self.ztopmiddle_root:SetHAnchor(ANCHOR_MIDDLE)
     self.ztopmiddle_root:SetVAnchor(ANCHOR_TOP)
