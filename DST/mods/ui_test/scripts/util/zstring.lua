@@ -37,6 +37,10 @@ function Zstring:getCharacterLength()
     return length
 end
 
+function Zstring:getByteLength()
+    return #self.str
+end
+
 function Zstring:substrByCharacterCount(startPos, characterCount)
     local sp = startPos ~= nil and startPos or self.curPos
     local ep = sp

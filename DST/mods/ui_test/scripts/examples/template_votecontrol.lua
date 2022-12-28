@@ -80,7 +80,7 @@ local vote = function(self)
     self.votewindow.scrollbarline:SetScale(self.votewindow.scrollbarline_sx, self.votewindow.scrollbarline_sy, 0)
 
     local labeltext = Zstring("这是一个文本测试,来自于Z.测试时间:2022年12月25日,星期天.hahahahahahahahahahahha,小赤佬,我是小帅翔,帅翔帅翔帅翔.")
-    local text_len = labeltext:getCharacterLength()
+    local text_len = labeltext:getByteLength()
     local show_text = ""
     for i=1, text_len/row_byte_count + 1 do
         show_text = show_text .. labeltext:substrByByteCount(nil, row_byte_count) .. "\n"
