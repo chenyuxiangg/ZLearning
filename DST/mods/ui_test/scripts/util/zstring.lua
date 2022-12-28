@@ -9,6 +9,9 @@ function Zstring:getNextStepByPos(startPos)
         return self.curStep
     end
     local byteVal = string.byte(self.str, startPos)
+    if byteVal == nil then
+        return self.curStep
+    end
     if byteVal > 239 then
         self.curStep = 4
     elseif byteVal > 223 then
@@ -23,7 +26,7 @@ end
 
 function Zstring:getCharacterLength()
     local realByteCount = #self.str
-    local curBytePos = 0
+    local curBytePos = 1
     local length = 0
 
     while (curBytePos < realByteCount) do
