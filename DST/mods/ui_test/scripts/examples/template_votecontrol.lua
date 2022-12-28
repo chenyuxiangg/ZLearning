@@ -83,7 +83,7 @@ local vote = function(self)
     labeltext:alignByByteCount(row_byte_count)
     local text_len = labeltext:getByteLength()
     local show_text = ""
-    for i=1, text_len/row_byte_count + 1 do
+    for i=1, text_len/row_byte_count do
         show_text = show_text .. labeltext:substrByByteCount(nil, row_byte_count) .. "\n"
     end
     self.votewindow.label = self.votewindow:AddChild(Text(NEWFONT, 12, show_text, {0, 0, 0 ,1}))
