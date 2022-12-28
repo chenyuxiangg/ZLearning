@@ -5,6 +5,10 @@ local _g = GLOBAL
 
 local fn = function(self)
     self.ztopmiddle_root = self:AddChild(WIDGET("ZTopMiddleRoot"))
+    if self.ztopmiddle_root == nil then
+        print("add children failed.")
+        return
+    end
     self.ztopmiddle_root:SetScaleMode(SCALEMODE_PROPORTIONAL)
     self.ztopmiddle_root:SetHAnchor(ANCHOR_MIDDLE)
     self.ztopmiddle_root:SetVAnchor(ANCHOR_TOP)
