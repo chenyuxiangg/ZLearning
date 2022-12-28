@@ -14,22 +14,22 @@ local vote = function(self)
     function self:UpdateHeaderInfo(infotype, dir)
         if infotype == "x" then
             if dir == "add" then
-                self.votewindow.textlable_w = self.votewindow.textlable_w+1
+                self.votewindow.textlable_x = self.votewindow.textlable_x+1
             elseif dir == "sub" then
-                self.votewindow.textlable_w = self.votewindow.textlable_w-1
+                self.votewindow.textlable_x = self.votewindow.textlable_x-1
             end
         elseif infotype == "y" then
             if dir == "add" then
-                self.votewindow.textlable_h = self.votewindow.textlable_h+1
+                self.votewindow.textlable_y = self.votewindow.textlable_y+1
             elseif dir == "sub" then
-                self.votewindow.textlable_h = self.votewindow.textlable_h-1
+                self.votewindow.textlable_y = self.votewindow.textlable_y-1
             end
         end
         self.votewindow.label:SetRegionSize(self.votewindow.textlable_w, self.votewindow.textlable_h)
     end
 
     function self:GetHeaderInfo()
-        print("test")
+        print("x: ", self.votewindow.textlable_x, "y: ", self.votewindow.textlable_y)
     end
 
     self.ztopmiddle_root = self:AddChild(WIDGET("ztopmiddle_root"))
