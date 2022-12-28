@@ -34,8 +34,7 @@ local Zthoughtpanel = Class(Widget, function(self, owner)
     self:Hide()
 end)
 
-function Zthoughtpanel:adapterPosition(self)
-    self:SetPosition(Vector3.ZERO)
+function Zthoughtpanel:adapterPosition()
     self.bg:SetPosition(Vector3.ZERO)
     self.avatarBg:SetPosition(self.basePos+self.avatarPosOffset)
     self.avatarIcon:SetPosition(self.basePos+self.avatarPosOffset)
@@ -44,8 +43,7 @@ function Zthoughtpanel:adapterPosition(self)
     self.textLable:SetPosition(self.basePos+self.textLabelPosOffset)
 end
 
-function Zthoughtpanel:adapterScale(self)
-    self:SetScale(Vector3.ONE)
+function Zthoughtpanel:adapterScale()
     self.bg:SetScale(self.baseScale)
     self.avatarBg:SetScale(self.avatarScale)
     self.avatarIcon:SetScale(self.avatarScale)
@@ -53,7 +51,7 @@ function Zthoughtpanel:adapterScale(self)
     self.barLine:SetScale(self.barLineScale)
 end
 
-function Zthoughtpanel:slideOut(self)
+function Zthoughtpanel:slideOut()
     if not self.open then
         self.open = true
         self:MoveTo(Vector3.ZERO, self.basePos, .33, nil)
@@ -61,7 +59,7 @@ function Zthoughtpanel:slideOut(self)
     end
 end
 
-function Zthoughtpanel:slideIn(self)
+function Zthoughtpanel:slideIn()
     if self.open then
         self.open = false
         self:MoveTo(self.basePos, Vector3.ZERO, .33, nil)
@@ -69,7 +67,7 @@ function Zthoughtpanel:slideIn(self)
     end
 end
 
-function Zthoughtpanel:setText(self, str)
+function Zthoughtpanel:setText(str)
     local text = Zstring(str)
     text:alignByByteCount(self.characterByteCountInRow)
     local textLen = text:getByteLength()
