@@ -56,7 +56,7 @@ local vote = function(self)
     self.votewindow.scrollbarline_sy = 0.2
 
     self.votewindow.textlable_x = 17
-    self.votewindow.textlable_y = 25
+    self.votewindow.textlable_y = 17
 
     local letter_w = 7
     local letter_h = 9
