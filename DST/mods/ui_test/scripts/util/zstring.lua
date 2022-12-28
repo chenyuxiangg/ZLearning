@@ -57,7 +57,7 @@ function Zstring:substrByByteCount(startPos, byteCount)
     local curByteCount = 0
     byteCount = sp + byteCount <= #self.str and byteCount or #self.str-sp
     while true do
-        self.getNextStepByPos(ep)
+        self:getNextStepByPos(ep)
         curByteCount = curByteCount + self.curStep
         if curByteCount > byteCount then
             break
