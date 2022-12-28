@@ -37,7 +37,7 @@ function Zstring:getCharacterLength()
     return length
 end
 
-function Zstring:substr(startPos, characterCount)
+function Zstring:substrByCharacterCount(startPos, characterCount)
     local sp = startPos ~= nil and startPos or self.curPos
     local ep = sp
     for i = 1, characterCount do
@@ -48,6 +48,22 @@ function Zstring:substr(startPos, characterCount)
         end
     end
     self.curPos = ep
+    return string.sub(self.str, sp, ep)
+end
+
+function Zstring:substrByByteCount(startPos, byteCount)
+    local sp = startPos ~= nil and startPos or self.curPos
+    local ep = sp
+    local curByteCount = 0
+    byteCount = sp + byteCount <= #self.str and byteCount or #self.str-sp
+    while true do
+        self.getNextStepByPos(ep)
+        curByteCount = curByteCount + self.curStep
+        if curByteCount > byteCount then
+            break
+        end
+        ep = ep + self.curStep
+    end
     return string.sub(self.str, sp, ep)
 end
 

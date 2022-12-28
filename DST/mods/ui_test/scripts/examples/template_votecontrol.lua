@@ -63,6 +63,7 @@ local vote = function(self)
     local letter_w = 7
     local letter_h = 9
     local row_letter_count = 28
+    local row_byte_count = row_letter_count * 3
 
     self.votewindow.header_bg = self.votewindow:AddChild(Image("images/avatars.xml", "avatar_bg.tex"))
     self.votewindow.header_icon = self.votewindow:AddChild(Image("images/avatars.xml", "avatar_wilson.tex"))
@@ -81,8 +82,8 @@ local vote = function(self)
     local labeltext = Zstring("这是一个文本测试,来自于Z.测试时间:2022年12月25日,星期天.hahahahahahahahahahahha,小赤佬,我是小帅翔,帅翔帅翔帅翔.")
     local text_len = labeltext:getCharacterLength()
     local show_text = ""
-    for i=1, text_len/row_letter_count + 1 do
-        show_text = show_text .. labeltext:substr(nil, row_letter_count) .. "\n"
+    for i=1, text_len/row_byte_count + 1 do
+        show_text = show_text .. labeltext:substrByByteCount(nil, row_byte_count) .. "\n"
     end
     self.votewindow.label = self.votewindow:AddChild(Text(NEWFONT, 12, show_text, {0, 0, 0 ,1}))
     self.votewindow.label:SetPosition(self.votewindow.textlable_x, self.votewindow.textlable_y, 0)
