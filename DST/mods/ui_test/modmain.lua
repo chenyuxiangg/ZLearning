@@ -1,8 +1,21 @@
-local fn = require "examples/template_votecontrol"
 local ZDEBUG = require("debug/debug")
+local Zthoughtpanel = require("screen/zthoughtpanel")
 local _g = GLOBAL
 
-local Widget = require("widgets/widget")
+local fn = function(self)
+    self.ztopmiddle_root = self:AddChild(WIDGET("ztopmiddle_root"))
+    self.ztopmiddle_root:SetScaleMode(SCALEMODE_PROPORTIONAL)
+    self.ztopmiddle_root:SetHAnchor(ANCHOR_MIDDLE)
+    self.ztopmiddle_root:SetVAnchor(ANCHOR_TOP)
+    self.ztopmiddle_root:SetMaxPropUpscale(MAX_HUD_SCALE)
+    self.ztopmiddle_root = self.ztopmiddle_root:AddChild(WIDGET("real_ztopmiddle"))
+
+    self.zthoughtpanel = self.ztopmiddle_root:AddChild(Zthoughtpanel(self))
+    local testStr = "这是一个文本测试,来自于Z.测试时间:2022年12月25日,星期天.hahahahahahahahahahahha,小赤佬,我是小帅翔,帅翔帅翔帅翔."
+    self.zthoughtpanel:setText(testStr)
+    
+    return self.zthoughtpanel
+end
 
 local function DealByKeyK(key, down)
     if not down then
@@ -11,59 +24,13 @@ local function DealByKeyK(key, down)
     if _g.TheInput:IsKeyDown(_g.KEY_K) then
         local curscreen = TheFrontEnd:GetActiveScreen()
         ZDEBUG:zprint(curscreen.name)
-        if curscreen.name == "HUD" and curscreen.votewindow then
-            if not curscreen.votewindow.open then
-                ZDEBUG:zprint("votewindow focus.")
-                curscreen:OpenVote()
+        if curscreen.name == "HUD" and curscreen.zthoughtpanel then
+            if not curscreen.zthoughtpanel.open then
+                ZDEBUG:zprint("zthoughtpanel focus.")
+                curscreen.zthoughtpanel:slideOut()
             else
-                curscreen.votewindow:Hide()
-                curscreen.votewindow.open = false
+                curscreen.zthoughtpanel:slideIn()
             end
-        end
-    elseif _g.TheInput:IsKeyDown(_g.KEY_G) then
-        local curscreen = TheFrontEnd:GetActiveScreen()
-        if curscreen.name == "HUD" and curscreen.votewindow then
-            curscreen:UpdateHeaderInfo("x", "add")
-        end
-    elseif _g.TheInput:IsKeyDown(_g.KEY_H) then
-        local curscreen = TheFrontEnd:GetActiveScreen()
-        if curscreen.name == "HUD" and curscreen.votewindow then
-            curscreen:UpdateHeaderInfo("y", "add")
-        end
-    elseif _g.TheInput:IsKeyDown(_g.KEY_J) then
-        local curscreen = TheFrontEnd:GetActiveScreen()
-        if curscreen.name == "HUD" and curscreen.votewindow then
-            curscreen:UpdateHeaderInfo("sx", "add")
-        end
-    elseif _g.TheInput:IsKeyDown(_g.KEY_L) then
-        local curscreen = TheFrontEnd:GetActiveScreen()
-        if curscreen.name == "HUD" and curscreen.votewindow then
-            curscreen:UpdateHeaderInfo("sy", "add")
-        end
-    elseif _g.TheInput:IsKeyDown(_g.KEY_Z) then
-        local curscreen = TheFrontEnd:GetActiveScreen()
-        if curscreen.name == "HUD" and curscreen.votewindow then
-            curscreen:UpdateHeaderInfo("x", "sub")
-        end
-    elseif _g.TheInput:IsKeyDown(_g.KEY_X) then
-        local curscreen = TheFrontEnd:GetActiveScreen()
-        if curscreen.name == "HUD" and curscreen.votewindow then
-            curscreen:UpdateHeaderInfo("y", "sub")
-        end
-    elseif _g.TheInput:IsKeyDown(_g.KEY_N) then
-        local curscreen = TheFrontEnd:GetActiveScreen()
-        if curscreen.name == "HUD" and curscreen.votewindow then
-            curscreen:UpdateHeaderInfo("sx", "sub")
-        end
-    elseif _g.TheInput:IsKeyDown(_g.KEY_V) then
-        local curscreen = TheFrontEnd:GetActiveScreen()
-        if curscreen.name == "HUD" and curscreen.votewindow then
-            curscreen:UpdateHeaderInfo("sy", "sub")
-        end
-    elseif _g.TheInput:IsKeyDown(_g.KEY_B) then
-        local curscreen = TheFrontEnd:GetActiveScreen()
-        if curscreen.name == "HUD" and curscreen.votewindow then
-            curscreen:GetHeaderInfo()
         end
     end
 end
