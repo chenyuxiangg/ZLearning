@@ -54,7 +54,7 @@ end
 function Zthoughtpanel:slideOut()
     if not self.open then
         self.open = true
-        self:MoveTo(Vector3.ZERO, self.basePos, .33, nil)
+        self:MoveTo(Vector3(0, 0, 0), self.basePos, .33, nil)
         self:Show()
     end
 end
@@ -62,7 +62,7 @@ end
 function Zthoughtpanel:slideIn()
     if self.open then
         self.open = false
-        self:MoveTo(self.basePos, Vector3.ZERO, .33, nil)
+        self:MoveTo(self.basePos, Vector3(0, 0, 0), .33, nil)
         self:Hide()
     end
 end
