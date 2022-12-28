@@ -35,6 +35,7 @@ local Zthoughtpanel = Class(Widget, function(self, owner)
 end)
 
 function Zthoughtpanel:adapterPosition(self)
+    self:SetPosition(Vector3.ZERO)
     self.bg:SetPosition(Vector3.ZERO)
     self.avatarBg:SetPosition(self.basePos+self.avatarPosOffset)
     self.avatarIcon:SetPosition(self.basePos+self.avatarPosOffset)
@@ -44,6 +45,7 @@ function Zthoughtpanel:adapterPosition(self)
 end
 
 function Zthoughtpanel:adapterScale(self)
+    self:SetScale(Vector3.ONE)
     self.bg:SetScale(self.baseScale)
     self.avatarBg:SetScale(self.avatarScale)
     self.avatarIcon:SetScale(self.avatarScale)
