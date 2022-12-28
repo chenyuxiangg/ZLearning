@@ -29,7 +29,7 @@ local vote = function(self)
     end
 
     function self:GetHeaderInfo()
-        print("x: ", self.votewindow.textlable_w, ", y: ", self.votewindow.textlable_h)
+        print("test")
     end
 
     self.ztopmiddle_root = self:AddChild(WIDGET("ztopmiddle_root"))
@@ -56,9 +56,7 @@ local vote = function(self)
     self.votewindow.scrollbarline_sy = 0.2
 
     self.votewindow.textlable_x = 17
-    self.votewindow.textlable_y = 23.5
-    self.votewindow.textlable_w = 200
-    self.votewindow.textlable_h = 30
+    self.votewindow.textlable_y = 25
 
     local letter_w = 7
     local letter_h = 9
