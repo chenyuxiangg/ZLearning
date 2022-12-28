@@ -3,6 +3,8 @@ local Text = require("widgets/text")
 local Zstring = require("util/zstring")
 
 local Zthoughtpanel = Class(Widget, function(self, owner)
+    Widget._ctor(self, "Zthoughtpanel")
+
     self.parent = owner
     self.open = false
     self.basePos = Vector3(0, -50, 0)
