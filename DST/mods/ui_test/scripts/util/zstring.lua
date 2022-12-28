@@ -5,7 +5,7 @@ local Zstring = Class(function(self, str)
 end)
 
 function Zstring:getNextStepByPos(startPos)
-    if self.str = nil or #self.str == 0 then
+    if self.str == nil or #self.str == 0 then
         return self.curStep
     end
     local byteVal = string.byte(self.str, startPos)
