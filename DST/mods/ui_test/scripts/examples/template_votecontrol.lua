@@ -25,7 +25,7 @@ local vote = function(self)
                 self.votewindow.textlable_y = self.votewindow.textlable_y-1
             end
         end
-        self.votewindow.label:SetRegionSize(self.votewindow.textlable_w, self.votewindow.textlable_h)
+        self.votewindow.label:SetPosition(self.votewindow.textlable_x, self.votewindow.textlable_y, 0)
     end
 
     function self:GetHeaderInfo()
