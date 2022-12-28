@@ -68,6 +68,7 @@ function Zstring:substrByByteCount(startPos, byteCount)
         end
         ep = ep + self.curStep
     end
+    self.curPos = ep
     return string.sub(self.str, sp, ep)
 end
 
