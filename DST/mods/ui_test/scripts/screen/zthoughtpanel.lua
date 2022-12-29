@@ -17,7 +17,7 @@ local Zthoughtpanel = Class(Widget, function(self, owner)
     self.barLineScale = Vector3(0.3, 0.3, 1)
 
     self.fontSize = 20
-    self.textLableWidth = 500
+    self.textLableWidth = 440
     self.textLableHeight = 50
     self.characterCountInRow = 40
     self.characterByteCountInRow = self.characterCountInRow * 3
