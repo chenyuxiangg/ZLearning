@@ -13,8 +13,8 @@ local Zthoughtpanel = Class(Widget, function(self, owner)
     self.textLabelPosOffset = Vector3(17, 67, 0)
 
     self.baseScale = Vector3(2, 1.5, 1)
-    self.avatarScale = Vector3(0.4, 0.5, 1)
-    self.barLineScale = Vector3(0.2, 0.2, 1)
+    self.avatarScale = Vector3(0.5, 0.5, 1)
+    self.barLineScale = Vector3(0.5, 0.5, 1)
 
     self.fontSize = 12
     self.characterWidthOnScreen = 7
