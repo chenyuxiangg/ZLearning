@@ -74,9 +74,7 @@ end
 
 -- 将self.str不足byteCount整数倍的长度用空格补齐
 function Zstring:alignByByteCount(byteCount)
-    local len = self:getByteLength()
-    local dealtaLen = ((len / byteCount) + 1) * byteCount - len
-    for i = 1, dealtaLen do
+    for i = 1, byteCount do
         self.str = self.str .. " "
     end
 end
