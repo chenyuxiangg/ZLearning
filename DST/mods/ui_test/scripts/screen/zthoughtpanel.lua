@@ -19,7 +19,7 @@ local Zthoughtpanel = Class(Widget, function(self, owner)
     self.fontSize = 20
     self.textLableWidth = 440
     self.textLableHeight = 50
-    self.characterCountInRow = 32
+    self.characterCountInRow = 55
     -- self.characterByteCountInRow = self.characterCountInRow * 3
 
     self.bg = self:AddChild(Image("images/ui.xml", "votewindow_controller_bottom.tex"))
