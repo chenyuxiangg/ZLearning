@@ -10,13 +10,13 @@ local Zthoughtpanel = Class(Widget, function(self, owner)
     self.basePos = Vector3(0, -50, 0)
     self.avatarPosOffset = Vector3(-240, 65, 0)
     self.barLinePosOffset = Vector3(-210, 65, 0)
-    self.textLabelPosOffset = Vector3(-22, 65, 0)
+    self.textLabelPosOffset = Vector3(-22, 75, 0)
 
     self.baseScale = Vector3(2, 1.5, 1)
     self.avatarScale = Vector3(0.5, 0.5, 1)
     self.barLineScale = Vector3(0.3, 0.3, 1)
 
-    self.fontSize = 17
+    self.fontSize = 20
     self.textLableWidth = 500
     self.textLableHeight = 50
     self.characterCountInRow = 32
@@ -62,7 +62,7 @@ end
 function Zthoughtpanel:slideIn()
     if self.open then
         self.open = false
-        self:MoveTo(self.basePos, Vector3(0, 0, 0), .33, nil)
+        self:MoveTo(self.basePos, Vector3(0, 25, 0), .33, nil)
         self:Show()
     end
 end
