@@ -85,7 +85,7 @@ function Zthoughtpanel:getInfo()
     print("font size: ", self.textLable:GetSize())
 end
 
-function zthoughtpanel:updatePos(dir)
+function Zthoughtpanel:updatePos(dir)
     if dir == "r" then
         self.avatarPosOffset = self.avatarPosOffset + Vector3(1, 0, 0)
         self.barLinePosOffset = self.barLinePosOffset + Vector3(1, 0, 0)
