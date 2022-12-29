@@ -63,7 +63,7 @@ function Zthoughtpanel:slideIn()
     if self.open then
         self.open = false
         self:MoveTo(self.basePos, Vector3(0, 0, 0), .33, nil)
-        self:Hide()
+        self:Show()
     end
 end
 
