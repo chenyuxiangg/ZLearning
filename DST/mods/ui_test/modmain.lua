@@ -25,13 +25,32 @@ local function DealByKeyK(key, down)
     end
     if _g.TheInput:IsKeyDown(_g.KEY_K) then
         local curscreen = TheFrontEnd:GetActiveScreen()
-        ZDEBUG:zprint(curscreen.name)
         if curscreen.name == "HUD" and curscreen.zthoughtpanel then
             if not curscreen.zthoughtpanel.open then
-                ZDEBUG:zprint("zthoughtpanel focus.")
                 curscreen.zthoughtpanel:slideOut()
             else
                 curscreen.zthoughtpanel:slideIn()
+            end
+        end
+    elseif _g.TheInput:IsKeyDown(_g.KEY_G) then
+        local curscreen = TheFrontEnd:GetActiveScreen()
+        if curscreen.name == "HUD" and curscreen.zthoughtpanel then
+            if curscreen.zthoughtpanel.open then
+                curscreen.zthoughtpanel:updatePos("l")
+            end
+        end
+    elseif _g.TheInput:IsKeyDown(_g.KEY_H) then
+        local curscreen = TheFrontEnd:GetActiveScreen()
+        if curscreen.name == "HUD" and curscreen.zthoughtpanel then
+            if curscreen.zthoughtpanel.open then
+                curscreen.zthoughtpanel:updatePos("r")
+            end
+        end
+    elseif _g.TheInput:IsKeyDown(_g.KEY_B) then
+        local curscreen = TheFrontEnd:GetActiveScreen()
+        if curscreen.name == "HUD" and curscreen.zthoughtpanel then
+            if curscreen.zthoughtpanel.open then
+                curscreen.zthoughtpanel:getInfo()
             end
         end
     end

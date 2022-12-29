@@ -35,7 +35,6 @@ local Zthoughtpanel = Class(Widget, function(self, owner)
 end)
 
 function Zthoughtpanel:adapterPosition()
-    self.bg:SetPosition(0, 0, 0)
     self.avatarBg:SetPosition((self.basePos+self.avatarPosOffset).x, (self.basePos+self.avatarPosOffset).y, (self.basePos+self.avatarPosOffset).z)
     self.avatarIcon:SetPosition((self.basePos+self.avatarPosOffset).x, (self.basePos+self.avatarPosOffset).y, (self.basePos+self.avatarPosOffset).z)
     self.avatarFrame:SetPosition((self.basePos+self.avatarPosOffset).x, (self.basePos+self.avatarPosOffset).y, (self.basePos+self.avatarPosOffset).z)
@@ -84,6 +83,19 @@ function Zthoughtpanel:getInfo()
     print("avatarBg: ", self.avatarBg:GetPosition())
     print("barLine: ", self.barLine:GetPosition())
     print("font size: ", self.textLable:GetSize())
+end
+
+function zthoughtpanel:updatePos(dir)
+    if dir == "r" then
+        self.avatarPosOffset = self.avatarPosOffset + Vector3(1, 0, 0)
+        self.barLinePosOffset = self.barLinePosOffset + Vector3(1, 0, 0)
+        self.textLabelPosOffset = self.textLabelPosOffset + Vector3(1, 0, 0)
+    elseif dir == "l" then
+        self.avatarPosOffset = self.avatarPosOffset + Vector3(-1, 0, 0)
+        self.barLinePosOffset = self.barLinePosOffset + Vector3(-1, 0, 0)
+        self.textLabelPosOffset = self.textLabelPosOffset + Vector3(-1, 0, 0)
+    end
+    self:adapterPosition()
 end
 
 return Zthoughtpanel
