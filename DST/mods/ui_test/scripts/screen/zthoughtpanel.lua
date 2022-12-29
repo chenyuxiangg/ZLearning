@@ -9,17 +9,17 @@ local Zthoughtpanel = Class(Widget, function(self, owner)
     self.open = false
     self.basePos = Vector3(0, -50, 0)
     self.avatarPosOffset = Vector3(-240, 65, 0)
-    self.barLinePosOffset = Vector3(-214, 65, 0)
-    self.textLabelPosOffset = Vector3(-70, 65, 0)
+    self.barLinePosOffset = Vector3(-210, 65, 0)
+    self.textLabelPosOffset = Vector3(-60, 55, 0)
 
     self.baseScale = Vector3(2, 1.5, 1)
     self.avatarScale = Vector3(0.5, 0.5, 1)
     self.barLineScale = Vector3(0.3, 0.3, 1)
 
     self.fontSize = 17
-    self.characterWidthOnScreen = 10
-    self.characterHeightOnScreen = 18
-    self.characterCountInRow = 28
+    self.textLableWidth = 500
+    self.textLableHeight = 50
+    self.characterCountInRow = 32
     self.characterByteCountInRow = self.characterCountInRow * 3
 
     self.bg = self:AddChild(Image("images/ui.xml", "votewindow_controller_bottom.tex"))
@@ -28,6 +28,7 @@ local Zthoughtpanel = Class(Widget, function(self, owner)
     self.avatarFrame = self:AddChild(Image("images/avatars.xml", "avatar_frame_white.tex"))
     self.barLine = self:AddChild(Image("images/crafting_menu.xml", "scrollbar_bar.tex"))
     self.textLable = self:AddChild(Text(NEWFONT, self.fontSize, nil, {0, 0, 0 ,1}))
+    self.textLable:SetRegionSize(self.textLableWidth, self.textLableHeight)
 
     self:adapterPosition()
     self:adapterScale()
@@ -76,7 +77,6 @@ function Zthoughtpanel:setText(str)
     end
     self.textLable:SetSize(self.fontSize)
     self.textLable:SetString(showText)
-    self.textLable:SetRegionSize(self.characterWidthOnScreen*self.characterCountInRow, (textLen/self.characterByteCountInRow)*self.characterHeightOnScreen)
 end
 
 function Zthoughtpanel:getInfo()
