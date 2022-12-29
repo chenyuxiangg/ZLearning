@@ -69,7 +69,7 @@ end
 
 function Zthoughtpanel:setText(str)
     local text = Zstring(str)
-    text:alignByByteCount(self.characterCountInRow*3)
+    text:alignByByteCount(750)
     local textLen = text:getCharacterLength()
     local showText = ""
     for i=1, textLen/self.characterCountInRow do

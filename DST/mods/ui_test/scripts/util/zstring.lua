@@ -51,7 +51,7 @@ function Zstring:substrByCharacterCount(startPos, characterCount)
             break
         end
     end
-    self.curPos = ep
+    self.curPos = ep + self:getNextStepByPos(ep) >= #self.str and ep or ep + self.curStep
     return string.sub(self.str, sp, ep)
 end
 
