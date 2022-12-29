@@ -20,7 +20,7 @@ local Zthoughtpanel = Class(Widget, function(self, owner)
     self.textLableWidth = 440
     self.textLableHeight = 50
     self.characterCountInRow = 32
-    self.characterByteCountInRow = self.characterCountInRow * 3
+    -- self.characterByteCountInRow = self.characterCountInRow * 3
 
     self.bg = self:AddChild(Image("images/ui.xml", "votewindow_controller_bottom.tex"))
     self.avatarBg = self:AddChild(Image("images/avatars.xml", "avatar_bg.tex"))
@@ -69,11 +69,11 @@ end
 
 function Zthoughtpanel:setText(str)
     local text = Zstring(str)
-    text:alignByByteCount(self.characterByteCountInRow)
-    local textLen = text:getByteLength()
+    text:alignByByteCount(self.characterCountInRow*3)
+    local textLen = text:getCharacterLength()
     local showText = ""
-    for i=1, textLen/self.characterByteCountInRow do
-        showText = showText .. text:substrByByteCount(nil, self.characterByteCountInRow) .. "\n"
+    for i=1, textLen/self.characterCountInRow do
+        showText = showText .. text:substrByCharacterCount(nil, self.characterCountInRow) .. "\n"
     end
     self.textLable:SetSize(self.fontSize)
     self.textLable:SetString(showText)
