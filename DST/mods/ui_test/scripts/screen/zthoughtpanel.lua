@@ -10,7 +10,7 @@ local Zthoughtpanel = Class(Widget, function(self, owner)
     self.basePos = Vector3(0, -50, 0)
     self.avatarPosOffset = Vector3(-240, 65, 0)
     self.barLinePosOffset = Vector3(-210, 65, 0)
-    self.textLabelPosOffset = Vector3(-60, 55, 0)
+    self.textLabelPosOffset = Vector3(50, 55, 0)
 
     self.baseScale = Vector3(2, 1.5, 1)
     self.avatarScale = Vector3(0.5, 0.5, 1)
