@@ -10,7 +10,7 @@ local Zthoughtpanel = Class(Widget, function(self, owner)
     self.basePos = Vector3(0, -50, 0)
     self.avatarPosOffset = Vector3(-240, 65, 0)
     self.barLinePosOffset = Vector3(-210, 65, 0)
-    self.textLabelPosOffset = Vector3(-22, 75, 0)
+    self.textLabelPosOffset = Vector3(22, 75, 0)
 
     self.baseScale = Vector3(2, 1.5, 1)
     self.avatarScale = Vector3(0.5, 0.5, 1)
@@ -19,7 +19,7 @@ local Zthoughtpanel = Class(Widget, function(self, owner)
     self.fontSize = 20
     self.textLableWidth = 440
     self.textLableHeight = 50
-    self.characterCountInRow = 40
+    self.characterCountInRow = 36
     self.characterByteCountInRow = self.characterCountInRow * 3
 
     self.bg = self:AddChild(Image("images/ui.xml", "votewindow_controller_bottom.tex"))
