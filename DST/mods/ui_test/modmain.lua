@@ -46,6 +46,20 @@ local function DealByKeyK(key, down)
                 curscreen.zthoughtpanel:updatePos("r")
             end
         end
+    elseif _g.TheInput:IsKeyDown(_g.KEY_Z) then
+        local curscreen = TheFrontEnd:GetActiveScreen()
+        if curscreen.name == "HUD" and curscreen.zthoughtpanel then
+            if curscreen.zthoughtpanel.open then
+                curscreen.zthoughtpanel:updateFontSize("+")
+            end
+        end
+    elseif _g.TheInput:IsKeyDown(_g.KEY_X) then
+        local curscreen = TheFrontEnd:GetActiveScreen()
+        if curscreen.name == "HUD" and curscreen.zthoughtpanel then
+            if curscreen.zthoughtpanel.open then
+                curscreen.zthoughtpanel:updateFontSize("-")
+            end
+        end
     elseif _g.TheInput:IsKeyDown(_g.KEY_B) then
         local curscreen = TheFrontEnd:GetActiveScreen()
         if curscreen.name == "HUD" and curscreen.zthoughtpanel then

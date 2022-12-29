@@ -8,9 +8,9 @@ local Zthoughtpanel = Class(Widget, function(self, owner)
     self.parent = owner
     self.open = false
     self.basePos = Vector3(0, -50, 0)
-    self.avatarPosOffset = Vector3(-113, 60.5, 0)
-    self.barLinePosOffset = Vector3(-87, 60.5, 0)
-    self.textLabelPosOffset = Vector3(17, 67, 0)
+    self.avatarPosOffset = Vector3(-240, 60, 0)
+    self.barLinePosOffset = Vector3(-214, 60, 0)
+    self.textLabelPosOffset = Vector3(17, 65, 0)
 
     self.baseScale = Vector3(2, 1.5, 1)
     self.avatarScale = Vector3(0.5, 0.5, 1)
@@ -74,6 +74,7 @@ function Zthoughtpanel:setText(str)
     for i=1, textLen/self.characterByteCountInRow do
         showText = showText .. text:substrByByteCount(nil, self.characterByteCountInRow) .. "\n"
     end
+    self.textLable:SetSize(self.fontSize)
     self.textLable:SetString(showText)
     self.textLable:SetRegionSize(self.characterWidthOnScreen*self.characterCountInRow, (textLen/self.characterByteCountInRow)*self.characterHeightOnScreen)
 end
@@ -96,6 +97,15 @@ function Zthoughtpanel:updatePos(dir)
         self.textLabelPosOffset = self.textLabelPosOffset + Vector3(-1, 0, 0)
     end
     self:adapterPosition()
+end
+
+function Zthoughtpanel:updateFontSize(dir)
+    if dir == "+" then
+        self.fontSize = self.fontSize + 1
+    elseif dir == "-" then
+        self.fontSize = self.fontSize - 1
+    end
+    self.textLable:SetSize(self.fontSize)
 end
 
 return Zthoughtpanel
