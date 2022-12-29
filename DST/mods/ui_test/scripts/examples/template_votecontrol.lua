@@ -14,7 +14,7 @@ local fn = function(self)
     self.zthoughtpanel = self.ztopmiddle_root:AddChild(Zthoughtpanel(self))
     local testStr = "这是一个文本测试,来自于Z.测试时间:2022年12月25日,星期天.hahahahahahahahahahahha,小赤佬,我是小帅翔,帅翔帅翔帅翔."
     self.zthoughtpanel:setText(testStr)
-    self.zthoughtpanel:adapterPosition()
+    self.zthoughtpanel:getInfo()
     
     return self.zthoughtpanel
 end

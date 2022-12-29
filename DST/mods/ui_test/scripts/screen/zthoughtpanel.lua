@@ -14,7 +14,7 @@ local Zthoughtpanel = Class(Widget, function(self, owner)
 
     self.baseScale = Vector3(2, 1.5, 1)
     self.avatarScale = Vector3(0.5, 0.5, 1)
-    self.barLineScale = Vector3(0.4, 0.4, 1)
+    self.barLineScale = Vector3(0.3, 0.3, 1)
 
     self.fontSize = 12
     self.characterWidthOnScreen = 7
@@ -77,6 +77,13 @@ function Zthoughtpanel:setText(str)
     end
     self.textLable:SetString(showText)
     self.textLable:SetRegionSize(self.characterWidthOnScreen*self.characterCountInRow, (textLen/self.characterByteCountInRow)*self.characterHeightOnScreen)
+end
+
+function Zthoughtpanel:getInfo()
+    print("bg: ", self.bg:GetPosition())
+    print("avatarBg: ", self.avatarBg:GetPosition())
+    print("barLine: ", self.barLine:GetPosition())
+    print("font size: ", self.textLable:GetSize())
 end
 
 return Zthoughtpanel
