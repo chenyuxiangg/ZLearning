@@ -167,7 +167,7 @@ end
 ## 游戏中的组件实例
 
 * 食谱(recipe_book)
-> QuagmireRecipeBookScreen<\br>
+> QuagmireRecipeBookScreen  
 > 该组件包含两个子组件：RecipeBookWidget(widgets/redux/quagmire_recipebook) 和 AchievementsPanel(widgets/redux/achievementspanel)，相当于两个面板。
 
 ```lua
