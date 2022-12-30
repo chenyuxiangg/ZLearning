@@ -69,11 +69,17 @@ end
 
 function Zthoughtpanel:setText(str)
     local text = Zstring(str)
-    text:alignByByteCount(750)
     local textLen = text:getCharacterLength()
     local showText = ""
     for i=1, textLen/self.characterCountInRow do
-        showText = showText .. text:substrByCharacterCount(nil, self.characterCountInRow) .. "\n"
+        if i == textLen/self.characterCountInRow then
+            showText = showText .. text:substrByCharacterCount(nil, self.characterCountInRow)
+            for j=1, 120 do
+                showText = showText .. " "
+            end
+        else
+            showText = showText .. text:substrByCharacterCount(nil, self.characterCountInRow) .. "\n"
+        end
     end
     self.textLable:SetSize(self.fontSize)
     self.textLable:SetString(showText)
