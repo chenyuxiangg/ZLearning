@@ -81,6 +81,7 @@ function Zthoughtpanel:setText(str)
             showText = showText .. text:substrByCharacterCount(nil, self.characterCountInRow) .. "\n"
         end
     end
+    print("cyx: " .. showText)
     self.textLable:SetSize(self.fontSize)
     self.textLable:SetString(showText)
 end
