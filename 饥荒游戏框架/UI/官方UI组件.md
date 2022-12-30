@@ -168,6 +168,7 @@ end
 
 * 食谱(recipe_book)
 > QuagmireRecipeBookScreen
+> 该组件包含两个子组件：RecipeBookWidget(widgets/redux/quagmire_recipebook) 和 AchievementsPanel(widgets/redux/achievementspanel)，相当于两个面板。
 ```lua
 --- 举例
 local curscreen = TheFrontEnd:GetActiveScreen()
