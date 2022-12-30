@@ -72,13 +72,12 @@ function Zthoughtpanel:setText(str)
     local textLen = text:getCharacterLength()
     local showText = ""
     for i=1, textLen/self.characterCountInRow do
-        if i == textLen/self.characterCountInRow then
-            showText = showText .. text:substrByCharacterCount(nil, self.characterCountInRow)
-            for j=1, 120 do
-                showText = showText .. " "
-            end
-        else
-            showText = showText .. text:substrByCharacterCount(nil, self.characterCountInRow) .. "\n"
+        showText = showText .. text:substrByCharacterCount(nil, self.characterCountInRow) .. "\n"
+    end
+    if text.curPos ~= textLen then
+        showText = showText .. text:substrByCharacterCount(text.curPos, self.characterCountInRow)
+        for i=1, 120 then
+            showText = showText .. " "
         end
     end
     print("cyx: " .. showText, textLen/self.characterCountInRow)
