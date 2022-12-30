@@ -30,9 +30,10 @@ local Zthoughtpanel = Class(Widget, function(self, owner)
     self.textLable = self:AddChild(Text(NEWFONT, self.fontSize, nil, {0, 0, 0 ,1}))
     self.textLable:SetRegionSize(self.textLableWidth, self.textLableHeight)
 
+    self:SetPosition(0, 25, 0)
     self:adapterPosition()
     self:adapterScale()
-    self:Hide()
+    self:Show()
 end)
 
 function Zthoughtpanel:adapterPosition()
