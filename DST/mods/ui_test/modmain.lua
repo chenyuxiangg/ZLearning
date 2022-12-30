@@ -2,6 +2,7 @@ local ZDEBUG = require("debug/debug")
 local Zthoughtpanel = require("screen/zthoughtpanel")
 local WIDGET = require("widgets/widget")
 local fn = require("examples/template_votecontrol")
+local QuagmireRecipeBookScreen = require "screens/quagmire_recipebookscreen"
 local _g = GLOBAL
 
 -- local fn = function(self)
@@ -61,12 +62,7 @@ local function DealByKeyK(key, down)
             end
         end
     elseif _g.TheInput:IsKeyDown(_g.KEY_B) then
-        local curscreen = TheFrontEnd:GetActiveScreen()
-        if curscreen.name == "HUD" and curscreen.zthoughtpanel then
-            if curscreen.zthoughtpanel.open then
-                curscreen.zthoughtpanel:getInfo()
-            end
-        end
+        TheFrontEnd:PushScreen(QuagmireRecipeBookScreen(ThePlayer))
     end
 end
 
