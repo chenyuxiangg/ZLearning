@@ -167,10 +167,11 @@ end
 ## 游戏中的组件实例
 
 * 食谱(recipe_book)
-> QuagmireRecipeBookScreen
+> QuagmireRecipeBookScreen<\br>
 > 该组件包含两个子组件：RecipeBookWidget(widgets/redux/quagmire_recipebook) 和 AchievementsPanel(widgets/redux/achievementspanel)，相当于两个面板。
+
 ```lua
---- 举例
+--- 使用举例
 local curscreen = TheFrontEnd:GetActiveScreen()
 if curscreen.name == "HUD" and curscreen.owner ~= nil then
     TheFrontEnd:PushScreen(QuagmireRecipeBookScreen(curscreen.owner))
