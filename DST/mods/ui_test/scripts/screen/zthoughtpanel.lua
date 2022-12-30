@@ -76,7 +76,7 @@ function Zthoughtpanel:setText(str)
     end
     if text.curPos ~= textLen then
         showText = showText .. text:substrByCharacterCount(text.curPos, self.characterCountInRow)
-        for i=1, 120 then
+        for i=1, 120 do
             showText = showText .. " "
         end
     end
