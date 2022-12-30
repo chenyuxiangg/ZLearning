@@ -165,3 +165,12 @@ end
 * MakeStartingInventoryWidget
 
 ## 游戏中的组件实例
+
+* 食谱(recipe_book)
+> QuagmireRecipeBookScreen
+```lua
+--- 举例
+local curscreen = TheFrontEnd:GetActiveScreen()
+if curscreen.name == "HUD" and curscreen.owner ~= nil then
+    TheFrontEnd:PushScreen(QuagmireRecipeBookScreen(curscreen.owner))
+```
