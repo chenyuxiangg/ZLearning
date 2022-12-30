@@ -62,7 +62,12 @@ local function DealByKeyK(key, down)
             end
         end
     elseif _g.TheInput:IsKeyDown(_g.KEY_B) then
-        TheFrontEnd:PushScreen(QuagmireRecipeBookScreen(ThePlayer))
+        local curscreen = TheFrontEnd:GetActiveScreen()
+        if curscreen.name == "HUD" and curscreen.owner ~= nil then
+            TheFrontEnd:PushScreen(QuagmireRecipeBookScreen(curscreen.owner))
+        elseif curscreen.owner == nil then
+            ZDEBUG:zprint(curscreen)
+        end
     end
 end
 
