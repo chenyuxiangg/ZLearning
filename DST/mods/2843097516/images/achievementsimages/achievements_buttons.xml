@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Atlas>
+	<Texture filename="achievements_buttons.tex" />
+	<Elements>
+		<Element name="achievements_buttons_activity.tex" u1="0.001" u2="0.124" v2="0.999" v1="0.751" variant="" />
+		<Element name="achievements_buttons_alphabetic.tex" u1="0.126" u2="0.249" v2="0.999" v1="0.751" variant="" />
+		<Element name="achievements_buttons_boss.tex" u1="0.001" u2="0.124" v2="0.749" v1="0.501" variant="" />
+		<Element name="achievements_buttons_character.tex" u1="0.126" u2="0.249" v2="0.749" v1="0.501" variant="" />
+		<Element name="achievements_buttons_combat.tex" u1="0.251" u2="0.374" v2="0.999" v1="0.751" variant="" />
+		<Element name="achievements_buttons_delete.tex" u1="0.376" u2="0.499" v2="0.999" v1="0.751" variant="" />
+		<Element name="achievements_buttons_exploration.tex" u1="0.251" u2="0.374" v2="0.749" v1="0.501" variant="" />
+		<Element name="achievements_buttons_farming.tex" u1="0.376" u2="0.499" v2="0.749" v1="0.501" variant="" />
+		<Element name="achievements_buttons_food.tex" u1="0.001" u2="0.124" v2="0.499" v1="0.251" variant="" />
+		<Element name="achievements_buttons_hidden.tex" u1="0.126" u2="0.249" v2="0.499" v1="0.251" variant="" />
+		<Element name="achievements_buttons_hunt.tex" u1="0.251" u2="0.374" v2="0.499" v1="0.251" variant="" />
+		<Element name="achievements_buttons_locked.tex" u1="0.376" u2="0.499" v2="0.499" v1="0.251" variant="" />
+		<Element name="achievements_buttons_lockedonly.tex" u1="0.001" u2="0.124" v2="0.249" v1="0.001" variant="" />
+		<Element name="achievements_buttons_mastery.tex" u1="0.126" u2="0.249" v2="0.249" v1="0.001" variant="" />
+		<Element name="achievements_buttons_numeric.tex" u1="0.251" u2="0.374" v2="0.249" v1="0.001" variant="" />
+		<Element name="achievements_buttons_save.tex" u1="0.376" u2="0.499" v2="0.249" v1="0.001" variant="" />
+		<Element name="achievements_buttons_settings.tex" u1="0.501" u2="0.624" v2="0.999" v1="0.751" variant="" />
+		<Element name="achievements_buttons_settings2.tex" u1="0.626" u2="0.749" v2="0.999" v1="0.751" variant="" />
+		<Element name="achievements_buttons_settings3.tex" u1="0.751" u2="0.874" v2="0.999" v1="0.751" variant="" />
+		<Element name="achievements_buttons_settings4.tex" u1="0.876" u2="0.999" v2="0.999" v1="0.751" variant="" />
+		<Element name="achievements_buttons_showall.tex" u1="0.501" u2="0.624" v2="0.749" v1="0.501" variant="" />
+		<Element name="achievements_buttons_social.tex" u1="0.626" u2="0.749" v2="0.749" v1="0.501" variant="" />
+		<Element name="achievements_buttons_time.tex" u1="0.751" u2="0.874" v2="0.749" v1="0.501" variant="" />
+		<Element name="achievements_buttons_trophy1.tex" u1="0.876" u2="0.999" v2="0.749" v1="0.501" variant="" />
+		<Element name="achievements_buttons_trophy2.tex" u1="0.501" u2="0.624" v2="0.499" v1="0.251" variant="" />
+		<Element name="achievements_buttons_trophy3.tex" u1="0.626" u2="0.749" v2="0.499" v1="0.251" variant="" />
+		<Element name="achievements_buttons_unlocked.tex" u1="0.751" u2="0.874" v2="0.499" v1="0.251" variant="" />
+		<Element name="achievements_buttons_unlockedonly.tex" u1="0.876" u2="0.999" v2="0.499" v1="0.251" variant="" />
+	</Elements>
+</Atlas>
