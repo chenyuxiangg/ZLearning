@@ -167,12 +167,15 @@ end
 ## 游戏中的组件实例
 
 * 食谱(recipe_book)
-> QuagmireRecipeBookScreen  
-> 该组件包含两个子组件：RecipeBookWidget(widgets/redux/quagmire_recipebook) 和 AchievementsPanel(widgets/redux/achievementspanel)，相当于两个面板。
+> **QuagmireRecipeBookScreen**  
+> 该组件包含两个子组件：*RecipeBookWidget(widgets/redux/quagmire_recipebook)* 和 *AchievementsPanel(widgets/redux/achievementspanel)*，相当于两个面板。
 
 ```lua
---- 使用举例
+--- 使用举例，创建一个QuagmireRecipeBookScreen实例
 local curscreen = TheFrontEnd:GetActiveScreen()
 if curscreen.name == "HUD" and curscreen.owner ~= nil then
     TheFrontEnd:PushScreen(QuagmireRecipeBookScreen(curscreen.owner))
 ```
+
+**AchievementsPanel**
+> 饥荒联机版的各种模式会使用`_BuildAchievementsExplorer`函数构建AchievementsPanel的主体，包括UI布局以及载入数据内容，UI布局不会随用户的操作而改变，但是图标、数据内容会随用户的行为改变。因此官方将会改变的部分抽象出来，封装成了`TrueScrollList`类(widgets/truescrolllist.lua)和`EventAchievements`类(evenachievements.lua)。`TrueScrollList`类用于更新UI界面显示的部分，比如图标、文字、状态等；`EventAchievements`类用于
