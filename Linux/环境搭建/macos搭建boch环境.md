@@ -6,3 +6,9 @@
 [命令行快捷操作](https://cloud.tencent.com/developer/article/1586970?from=15425&areaSource=102001.3&traceId=7ajMIYrYbaIq_3hecnC89)
 
 ## 问题
+1. 参考**Mac安装bochs**配置，另外发现问题：安装了*libxrandr*后`make`时依然提示"X11/extensions/Xrandr.h not found.".解决方案如下：
+    > 使用`brew list libxrandr`查看libxrandr的头文件路径，假设为"/opt/homebrew/Cellar/libxrandr/1.5.3/include/";
+    > 进入"bochs-<版本号>/gui"目录，编辑**Makefile**文件，找到`LOCAL_CXXFLAGS=`(大约在43行)，末尾新增如下`-I/opt/homebrew/Cellar/libxrandr/1.5.3/include/`;
+2. 参考**Mac安装bochs**配置，另外发现问题：安装了*libxrandr*后`make`时提示链接异常,提示“ld: library not found for -lXrandr”.解决方案如下：
+    > 使用`brew list libxrandr`查看libxrandr的头文件路径，假设为"/opt/homebrew/Cellar/libxrandr/1.5.3/lib/";
+    > 在"bochs-<版本号>"目录下编辑**Makefile**文件，找到"LIBS ="(大约在92行)，在最后一个"-L"参数后新增如下`-L/opt/homebrew/Cellar/libxrandr/1.5.3/lib/`;
