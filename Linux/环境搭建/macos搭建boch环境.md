@@ -5,6 +5,8 @@
 
 ## linux命令行快捷操作
 [命令行快捷操作](https://cloud.tencent.com/developer/article/1586970?from=15425&areaSource=102001.3&traceId=7ajMIYrYbaIq_3hecnC89)
+[vim函数跳转和变量跳转操作](https://segmentfault.com/a/1190000021097211)
+[vim跳转操作](https://mapan1984.github.io/tool/2016/04/22/Vim-%E7%A7%BB%E5%8A%A8%E8%B7%B3%E8%BD%AC/)
 
 ## 问题
 1. 参考**Mac安装bochs**配置，另外发现问题：安装了*libxrandr*后`make`时依然提示"X11/extensions/Xrandr.h not found.".解决方案如下：
