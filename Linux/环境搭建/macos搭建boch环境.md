@@ -15,3 +15,4 @@
 2. 参考**Mac安装bochs**配置，另外发现问题：安装了*libxrandr*后`make`时提示链接异常,提示“ld: library not found for -lXrandr”.解决方案如下：
     > 使用`brew list libxrandr`查看libxrandr的头文件路径，假设为"/opt/homebrew/Cellar/libxrandr/1.5.3/lib/";
     > 在"bochs-<版本号>"目录下编辑**Makefile**文件，找到"LIBS ="(大约在92行)，在最后一个"-L"参数后新增如下`-L/opt/homebrew/Cellar/libxrandr/1.5.3/lib/`;
+3. 由于MacOS安装linux-0.11的编译环境不方便，因此将编译环境安装在ubuntu-16.04上，其中ubuntu16.04安装gcc-3.4参见[gcc-3.4安装](https://blog.csdn.net/u014069939/article/details/90726175),as86和ld86直接使用`sudo apt-get install bin86`即可安装.
