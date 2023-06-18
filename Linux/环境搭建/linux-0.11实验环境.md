@@ -51,7 +51,7 @@ $ ls -al
 ```
 
 现在我们查看一下文件结构：
-![lab_dir_tree]()
+![lab_dir_tree](https://github.com/chenyuxiangg/ZLearning/blob/master/Linux/res/picture/lab_dir_tree.png)
 
 * image文件
 
@@ -223,7 +223,7 @@ $ sudo apt-get install libxpm4:i386
 ```
 
 Finally，这时候再run，终于可以运行linux-0.11内核了。
-![lab_bochs_run]()
+![lab_bochs_run](https://github.com/chenyuxiangg/ZLearning/blob/master/Linux/res/picture/lab_bochs_run.png)
 
 接下来，自由地修改、编译linux-0.11的内核，在实践中加深对操作系统的理解吧！
 
